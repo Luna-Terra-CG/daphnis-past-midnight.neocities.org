@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en_NS">
+
+<head>
+  <title>Wiki</title>
+  <link rel="icon" type="image/x-icon" href="nonbinary.ico">
+  <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="stylesheet" href="colors.css">
+<style>
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+}
+p, h4, h3 {
+  margin: 0px;
+}
+/* link text */
+a:link {
+  color: #c6a0f6;
+}
+a:visited {
+  color: #f5bde6;
+}
+a:hover {
+  color: #f5bde6;
+}
+a:active {
+  color: #8aadf4;
+}
+/* highlight */
+::-moz-selection {
+  color: var(--base);
+  background: var(--mauve);
+}
+::selection {
+  color: var(--base);
+  background: var(--mauve);
+  background-color: var(--mauve) !important;
+}
+
+.background {
+  background-image: linear-gradient(to bottom in oklab, var(--base) , var(--surface2));
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+.background_stars {
+  background-image: url("background.png");
+  background-repeat: repeat;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+.background_scanLines {
+  background-image: url("scanlines.png");
+  background-repeat: repeat;
+  opacity: 0.135;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+.background_glitch {
+  background-image: url("mailglitch.png");
+  position: fixed;
+  width: 455px;
+  height: 512px;
+  top: 0;
+  left: 50px;
+}
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* sidebar */
+:root {
+  --sidebar-padding-top: 13px;
+  --sidebar-padding-bottom: 30px;
+  --sidebar-padding-right: 24px;
+}
+.sidebar {
+  border-top: 22px solid var(--mauve);
+  bottom: 15%;
+  position: absolute;
+}
+.sidebar_items {
+  padding-top: 0px;
+  padding-left: 16px;
+  background: rgba(var(--base-rgb), 0.65);
+  backdrop-filter: blur(2px);
+  color: var(--text);
+  width: 300px;
+}
+.sidebar_index, .sidebar_blog, .sidebar_wiki, .sidebar_programs, .sidebar_websites, .sidebar_comms {
+  margin-right: 2px;
+}
+.sidebar_index:hover, .sidebar_blog:hover, .sidebar_wiki:hover, .sidebar_programs:hover, .sidebar_websites:hover, .sidebar_comms:hover {
+  outline: 2px solid var(--text);
+}
+.ghost_margin {
+  height: var(--sidebar-padding-top);
+  background: transparent;
+}
+.sidebar_text {
+  margin-left: 10px;
+  font-family: 'Source Code Pro';
+  font-size: 24.5px;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+.sidebar_seperator {
+  height: 2px;
+  max-height: 2px;
+  min-height: 2px;
+  background: var(--subtext1);
+  margin-right: var(--sidebar-padding-right);
+  margin-left: 10px;
+}
+.sidebar_icon {
+  display: flex;
+  float: right;
+  height: 27px;
+  width: 27px;
+  margin-top: 13px;
+  margin-right: var(--sidebar-padding-right);
+  margin-left: 20px;
+}
+.sidebar_backarrow {
+  padding-top: var(--sidebar-padding-bottom);
+  padding-bottom: var(--sidebar-padding-bottom);
+  padding-left: 13px;
+  background: rgba(var(--base-rgb), 0.65);
+  backdrop-filter: blur(2px);
+  color: var(--text);
+}
+.sidebar_backarrow_icon {
+  width: 38px;
+}
+/* change active tab color */
+.sidebar_wiki {
+  background: var(--mauve);
+  color: var(--surface0);
+  outline: 2px solid var(--mauve);
+}
+.sidebar_wiki:hover {
+  outline: 2px solid var(--mauve);
+}
+
+/* article catagory */
+.article_section {
+  display: flex;
+  flex-direction: row;
+  margin-right: var(--article-padding);
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.article_section_left, .article_section_right {
+  background: var(--text);
+  height: 2px;
+  width: 100%;
+}
+.article_section_text {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 15px;
+  overflow: visible;
+  white-space: nowrap;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: 'Source Code Pro';
+}
+
+/* article info */
+#article_integritySpoofing{display:none}
+#article_integritySpoofing:not(:checked) + #article_integritySpoofing_contents {
+  display: none;
+}
+#article_krab{display:none}
+#article_krab:not(:checked) + #article_krab_contents {
+  display: none;
+}
+#article_krab_update{display:none}
+#article_krab_update:not(:checked) + #article_krab_update_contents {
+  display: none;
+}
+#article_key2_apps{display:none}
+#article_key2_apps:not(:checked) + #article_key2_apps_contents {
+  display: none;
+}
+.article_title {
+  color: var(--text);
+  width: auto;
+  margin-right: var(--article-padding)
+}
+.article_name {
+  text-transform: uppercase;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-family: 'Source Code Pro';
+}
+.article_name_divider {
+  height: 2px;
+  background: var(--text);
+  margin-top: 8px;
+  margin-bottom: 8px;
+  min-height: 2px;
+}
+.article_date {
+  font-size: 15px;
+  font-family: 'Roboto';
+}
+.article_arrow {
+  height: 25px;
+  display: flex;
+  float: right;
+  rotate: 90deg;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+.article_date, .article_name, .article_name_divider {
+  margin-left: 20px;
+}
+
+/* article */
+:root {
+  --article-padding: 15%;
+}
+.article_container {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0%;
+  left: calc(316px + 9%);
+  background: linear-gradient(to bottom in oklab, rgba(var(--base-rgb), 0.5) , rgba(var(--base-rgb), 0.63));
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+.article_contents {
+  color: var(--text);
+  padding-left: 25px;
+  width: auto;
+  margin-right: var(--article-padding);
+}
+.article_text {
+  word-wrap: break-word;
+  font-family: 'Roboto';
+  font-size: 16px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  align-self: flex-start;
+}
+.article_code {
+  background-color: rgba(var(--surface0-rgb), 0.3);
+  border: 1px solid var(--surface1);
+  font-size: 15px;
+  margin-right: 1px;
+  margin-left: 1px;
+  font-family: 'Source Code Pro';
+}
+.article_list {
+  margin: 2px;
+  margin-top: 0px;
+  padding-inline-start: 18px;
+}
+li {
+  margin-top: 4px;
+}
+.article_header {
+  font-family: 'Source Code Pro';
+  text-transform: uppercase;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.article_divider {
+  background: transparent;
+  height: 10px;
+}
+.article_divider_small {
+  background: transparent;
+  height: 2px;
+}
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="background">
+      <p class="background_stars"></p>
+      <p class="background_glitch"></p>
+      <p class="background_scanLines"></p>
+    </aside>
+    <aside class="sidebar">
+      <div class="sidebar_items">
+        <p class="ghost_margin"> </p>
+        <div class="sidebar_index">
+          <svg class="sidebar_icon" viewBox="0 0 37 37" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" stroke-width="1.02778" d="M 1,19.5 V 1 H 19.5 38 V 19.5 38 H 19.5 1 Z m 30.83333,0 V 7.166667 H 19.5 7.166667 V 19.5 31.83333 H 19.5 31.83333 Z m -17.47222,0 V 14.36111 H 19.5 24.63889 V 19.5 24.63889 H 19.5 14.36111 Z">
+          </svg>
+          <p class="sidebar_text">Index</p>
+        </div>
+        <p class="sidebar_seperator"></p>
+        <div class="sidebar_blog">
+          <svg class="sidebar_icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" stroke-width="0.296296" d="M 0,16 V 0 H 15.999999 32 V 16 32 H 15.999999 0 Z m 27.555554,0 V 4.4444444 H 15.999999 4.4444444 V 16 27.555556 H 15.999999 27.555554 Z M 9.7777763,20 v -2.222222 h 6.2222227 6.222222 V 20 22.222222 H 15.999999 9.7777763 Z m 0,-8 V 9.7777778 h 6.2222227 6.222222 V 12 14.222222 H 15.999999 9.7777763 Z">
+          </svg>
+          <p class="sidebar_text">Mail & Alerts</p>
+        </div>
+        <p class="sidebar_seperator"></p>
+        <div class="sidebar_wiki">
+          <svg class="sidebar_icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" stroke-width="0.296296" d="M 0,29.777778 V 27.555556 H 16 32 V 29.777778 32 H 16 0 Z M 0,20.592593 V 18.37037 h 16 16 v 2.222223 2.222222 H 16 0 Z M 0,11.407407 V 9.1851852 H 16 32 V 11.407407 13.62963 H 16 0 Z M 0,2.2222221 V 0 H 16 32 V 2.2222221 4.4444444 H 16 0 Z">
+          </svg>
+          <p class="sidebar_text">Wiki</p>
+        </div>
+        <p class="sidebar_seperator"> </p>
+        <div class="sidebar_programs">
+          <svg class="sidebar_icon" viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" stroke-width="0.981482" d="M 0.71880083,101.09946 V 95.210576 H 6.6076896 12.496579 v 5.888884 5.88889 H 6.6076896 0.71880083 Z m 32.38888817,0 V 95.210576 H 69.913246 106.7188 v 5.888884 5.88889 H 69.913246 33.107689 Z M 0.71880083,53.988353 V 48.099464 H 6.6076896 12.496579 v 5.888889 5.888889 H 6.6076896 0.71880083 Z m 32.38888817,0 V 48.099464 H 69.913246 106.7188 v 5.888889 5.888889 H 69.913246 33.107689 Z M 0.71880083,6.8772416 V 0.98835275 H 6.6076896 12.496579 V 6.8772416 12.766131 H 6.6076896 0.71880083 Z m 32.38888817,0 V 0.98835275 H 69.913246 106.7188 V 6.8772416 12.766131 H 69.913246 33.107689 Z">
+          </svg>
+          <p class="sidebar_text">Programs</p>
+        </div>
+        <p class="sidebar_seperator"></p>
+        <div class="sidebar_websites">
+          <svg class="sidebar_icon" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M 0,33.999999 V 0 h 24 24 v 23.999999 24 h -4 -4 v -20 V 7.9999999 H 24 8 v 29.9999991 30 H 4 0 Z m 20,10 v -24 h 4 4 v 20 20 h 16 16 v -30 V 0 h 4 4 v 33.999999 34 H 44 20 Z">
+          </svg>
+          <p class="sidebar_text">Websites</p>
+        </div>
+        <p class="sidebar_seperator"></p>
+        <div class="sidebar_comms">
+          <svg class="sidebar_icon" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M 51,100.5 V 93 H 79.500001 108 v 7.5 7.5 H 79.500001 51 Z M 0,70.5 V 63 H 42 84.000001 V 70.5 78 H 42 0 Z M 33,39 V 33 H 70.5 108 v 6 6 H 70.5 33 Z M 0,7.5000003 V 0 H 46.5 93.000001 V 7.5000003 15 H 46.5 0 Z">
+          </svg>
+          <p class="sidebar_text">Guestbook</p>
+        </div>
+        <p class="sidebar_seperator"></p>
+      </div>
+      <div class="sidebar_backarrow">
+        <svg class="sidebar_backarrow_icon" viewBox="0 0 218 139" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor" d="M 79.000241,108 V 77 h -18.24074 -18.24074 l 6.735491,6.735491 6.735491,6.735495 -8.72962,8.77025 -8.72962,8.770254 L 19.265254,88.765246 0,69.518997 19.235438,50.264572 38.470871,31.010147 47.233436,39.732114 55.996002,48.454081 49.274941,55.22704 42.553881,62 H 60.777062 79.000241 V 31 0 h 69.499999 69.5 V 69.5 139 h -69.5 -69.499999 z M 202.00024,69.5 V 16 h -53.5 -53.499999 v 23 23 h 25.999999 26 v 7.5 7.5 h -26 -25.999999 V 99.999996 123 h 53.499999 53.5 z">
+        </svg>
+      </div>
+    </aside>
+    <div class="article_container">
+    <div class="article_section">
+      <p class="article_section_left"></p>
+      <p class="article_section_text">BlackBerry Key2</p>
+      <p class="article_section_right"></p>
+    </div>
+    <label for="article_integritySpoofing" class="article_title">
+      <p class="article_name_divider"></p>
+      <svg class="article_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"
+       id="path1">
+      </svg>
+      <h3 class="article_name">Play Integrity Spoofing</h3>
+      <p class="article_date">Last editied: Mar 28 2026</p>
+    </label>
+    <input type="checkbox" id="article_integritySpoofing" name="article_integritySpoofing">
+      <div class="article_contents" id="article_integritySpoofing_contents">
+        <p class="article_divider"></p>
+        <h4 class="article_header">1: Prerequsites</h4>
+        <p class="article_text">NOTE: The tutorial is meant for the blackberry key2(le) but will work for other android devices with some tweaking.
+        <p class="article_text">You have ADB and fastboot installed</p>
+        <p class="article_text">Your device is running LineageOS, if it's not see the article below</p>
+        <p class="article_text">The APatch app is installed from either <a href="https://github.com/bmax121/APatch">github</a> or <a href="https://f-droid.org/packages/me.bmax.apatch/">F-Droid</a>.</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">2.1: Patching boot.img</h4>
+        <p class="article_text">Get the boot.img from inside of the zip file of the ROM you currently have flashed and move it to your devices's internal storage</p>
+        <p class="article_text">Open the APatch app and select the left most icon in the top bar</p>
+        <p class="article_text">Select 'Select a boot image to patch' and point it to your boot.img</p>
+        <p class="article_text">Enter a password the SuperKey box</p>
+        <p class="article_text">NOTE: Make sure to write it down somewhere as you will need it later</p>
+        <p class="article_text">Move the outputted .img file to you computer.</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">2.2: Flashing APatch</h4>
+        <p class="article_text">Power off your phone.</p>
+        <p class="article_text">Once you phone is fully powered off hold the power and volume down buttons until the bootloader is shown.</p>
+        <p class="article_text">Connect your phone to your computer</p>
+        <p class="article_text">Run the following commands:</p>
+        <ul class="article_list">
+          <li><code class="article_code">fastboot flash boot /path/to/apatch_patched_{random_text}.img</code></li>
+          <li><code class="article_code">fastboot reboot</code></li>
+        </ul>
+        <p class="article_text">Once the device finishes booting open the APatch app</p>
+        <p class="article_text">Enter your SuperKey into the superkey box then select 'Install Android Patch'</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">3: Flashing Modules</h4>
+        <p class="article_text">Download Integrity-Box <a href="https://github.com/MeowDump/Integrity-Box/releases/latest">from here</a>, you need '{version}-Integrity-Box-{DD}-{MM}-{YYYY}.zip'.</p>
+        <p class="article_text">Download ReZygisk <a href="https://github.com/PerformanC/ReZygisk/releases/latest">from here</a>, you need 'ReZygisk-{version}-release.zip'.</p>
+        <p class="article_text">Download TEESimulator <a href="https://github.com/JingMatrix/TEESimulator/releases/latest">from here</a>, you need 'TEESimulator-{version}-Release.zip'.</p>
+        <p class="article_text">Download Zygisk-Assistant <a href="https://github.com/snake-4/Zygisk-Assistant/releases/latest">from here</a>, you need 'Zygisk-Assistant-{version}-{commitID}-release.zip'.</p>
+        <p class="article_text">Open APatch and enter the APModule tab. (second from the right)</p>
+        <p class="article_text">Press the floating button, it will open a file browser, open one of the downloaded zip files.</p>
+        <p class="article_text">Once the restart button appears press the back key. DO NOT PRESS RESTART.</p>
+        <p class="article_text">Repeat the previous to instructions until you have installed all 4 downloaded zip files.</p>
+        <p class="article_text">Reboot device and once it finishes open the APModule tab again</p>
+        <p class="article_text">On the card for <i>.Integrity</i> Box tap the 'Action' button</p>
+        <p class="article_text">(Optional): Configure Integrity Box, you can open it's configuration utility by pressing the 'Open' button on it's card in APModule</p>
+        <p class="article_text">If you need to hide all system modifications from an app go into apatch's superuser(center) tab and tap on the app's name then enable the 'Exclude modifications' toggle.</p>
+        <p class="article_text">NOTE: Enabling this may break play integrity spoofing and custom rom hiding for that app</p>
+        <p class="article_divider"></p>
+      </div>
+    <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
+    <label for="article_krab" class="article_title">
+    <p class="article_name_divider"></p>
+      <svg class="article_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"
+       id="path1">
+      </svg>
+      <h3 class="article_name">Install Guide for Krab-Ubica's LineageOS Builds</h3>
+      <p class="article_date">Last editied: Mar 28 2026</p>
+    </label>
+    <input type="checkbox" id="article_krab" name="article_krab">
+      <div class="article_contents" id="article_krab_contents">
+        <p class="article_divider"></p>
+        <h4 class="article_header">1: Prerequisites</h4>
+        <p class="article_text">Have ADB and fastboot installed</p>
+        <p class="article_text">(Windows): You have the <a href="https://mega.nz/file/YVI0VKpR#38iPAMEtTwjMHS5Ykts37pLegy9ktQ2t1X-Ro2M82WI">BlackBerry USB drivers</a> installed</p>
+        <p class="article_text">NOTE: If you don't know the path of a file you can drag it from your filemanager into a terminal window</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">1.1: Stock Firmware Prerequisites</h4>
+        <p class="article_text">NOTE: Only follow this section if you currently have the stock android 8.1 rom installed</p>
+        <p class="article_text">Remove your screen passord and googles account from your device</p>
+        <p class="article_text">Download the <a href="https://mega.nz/file/pdBjAARa#l5WNgDKoaRWN-ORkK-lBPhGqkwyFqz91HlU3r-CGWfs">ACQ160 Autoloader</a>.</p>
+        <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
+        <p class="article_text">The linux version of the flashall.bat script as available <a href="https://daphnis-past-midnight.neocities.org/flash.sh">here</a>.</p>
+        <p class="article_text">You will need to flash the firmware twice to do so extract the downloaded 7z file and run the included 'flashall.bat' file, once the phone boots up to the setup screen reboot to the bootloader and run the flash script again.</p>
+        <p class="article_text">Unlock you device's bootloader as shown <a href="https://xdaforums.com/t/unlock-bootloader-blackberry-key2-athena-key2-le-luna.4781022/">in Bochenek's guide</a>.</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">2: Backing up data with seedvault</h4>
+        <p class="article_text">NOTE: This section is *completely* optional and only applicable if you are updating from one of Bochenek's builds.</p>
+        <p class="article_text">Open settings and go into system: backup: Seedvault backup</p>
+        <p class="article_text">If you haved logged into google account on the device you will need to set the backup provider to seedvault</p>
+        <p class="article_text">Go thru the prompts to setup seedvault</p>
+        <p class="article_text">MAKE SURE TO WRITE DOWN YOUR BACKUP KEYS YOU WILL NEED THEM LATER</p>
+        <p class="article_text">Enable the 'Backup my apps' option</p>
+        <p class="article_text">Press the three dots icon the right corner and select 'Backup Now' option</p>
+        <p class="article_text">DO NOT set the backup location to you internal storage as it will be wiped when flashing the rom. I recommend using a usb drive or an SD card.</p>
+        <p class="article_text">Proceed to step 3 one your backup has finished</p>
+        <p class="article_text">NOTE: Make sure to manually backup your pictures and DCIM folders as these are not covered by seedvault</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">3: Flashing the rom</h4>
+        <p class="article_text">WARNING: THIS WILL DELETE ALL DATA STORED ON THE DEVICE</p>
+        <p class="article_text">Download and extract the latest rom version posted on discord, <a href="https://mega.nz/file/0I4jQAoS#N5k-TZ2htjDYCHWTDy-6oW7f9DFRTkP0Ydt-8p-M80o">currently that's 1.3A</a></p>
+        <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
+        <p class="article_text">Run the following commands:
+        <ul class="article_list">
+          <li><code class="article_code">fastboot -w</code></li>
+          <li><code class="article_code">fastboot flash recovery /path/to/recovery.img</code></li>
+          <li><code class="article_code">fastboot flash system /path/to/system.img</code></li>
+          <li><code class="article_code">fastboot flash vendor /path/to/vendor.img</code></li>
+        </ul>
+        <p class="article_text">If you want google services follow section 3.1 then come back to this step.
+        <p class="article_text">Run <code class="article_code">fastboot flash boot /path/to/boot.img</code></p>
+        <p class="article_text">Run <code class="article_code">fastboot reboot</code>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">3.1: Flashing gapps</h4>
+        <p class="article_text">If you don't know what gapps package to use the recommended package is <a href="https://github.com/MindTheGapps/15.0.0-arm64/releases/latest">MindTheGapps</a> but you can use <a href="https://nikgapps.com/downloads">nikgapps</a>.</p>
+        <p class="article_text">If you want to use MicroG instead you can use <a href="https://bitgapps.io/extra">MicroGPlus</a> or <a href="https://github.com/micro5k/microg-unofficial-installer">microG unofficial installer</a>.</p>
+        <p class="article_text">Run <code class="article_code">fastboot flash boot /path/to/recovery.img reboot</code></p>
+        <p class="article_text">Once the recovery menu appears go into 'Apply update', 'Apply update from adb'</p>
+        <p class="article_text">Run <code class="article_code">adb sideload /path/to/gapps.zip</code> once the signature verification failed message appears select yes</p>
+        <p class="article_text">If you get a not enough space on system partion error go into 'Factory reset/Format data' and format the system partition, you will now have to reflash the LineageOS as shown in section 3.</p>
+        <p class="article_text">Select 'Advanced' then 'Reboot to bootloader'</p>
+        <h4 class="article_header">3.2: Restoring backup</h4>
+        <p class="article_text">Continue setup as normal until you get restore apps and data section</p>
+        <p class="article_text">Select next then select the storage media you backed up to (if you backed up to a usb drive plug that in now)</p>
+        <p class="article_text">Wait until it finds your backup
+        <p class="article_text">Input you 12 word code you wrote down earlier
+        <p class="article_text">NOTE: if you did NOT write it down you will not be able to restore your backup
+        <p class="article_text">Select the latest backup</p>
+        <p class="article_text">Unselect any google services (eg: 'Digital Wellbeing', 'Google Play Store', 'Speech Recogtinion and Synthsis from Google', 'Google Play Services', 'Google' etc)</p>
+        <p class="article_text">If you rooted your phone uncheck the root app you used (eg: magisk, apatch)</p>
+        <p class="article_text">Press the 'Restore backup' button</p>
+        <p class="article_text">Wait for restore to finish, it will take a while</p>
+        <p class="article_text">Press the 'Next' button once it turns blue</p>
+        <p class="article_text">Press the 'Finish' button once it turns blue</p>
+        <p class="article_text">Select reuse backup and skip restoring files</p>
+        <p class="article_divider"></p>
+      </div>
+    <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
+    <label for="article_krab_update" class="article_title">
+    <p class="article_name_divider"></p>
+      <svg class="article_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"
+       id="path1">
+      </svg>
+      <h3 class="article_name">Updating Krab-Ubica's LineageOS build</h3>
+      <p class="article_date">Last editied: Mar 25 2026</p>
+    </label>
+    <input type="checkbox" id="article_krab_update" name="article_krab_update">
+      <div class="article_contents" id="article_krab_update_contents">
+        <p class="article_divider"></p>
+        <h4 class="article_header">1: Prerequsites</h4>
+        <p class="article_text">You have ADB and fastboot installed</p>
+        <p class="article_text">You are running an older version of the rom</p>
+        <p class="article_text">NOTE: according to Krab-ubica downgrading is possible if the rom is signed with the same signature.</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">2: Updating the rom</h4>
+        <p class="article_text">Download the latest version posted on discord, <a href="https://mega.nz/file/0I4jQAoS#N5k-TZ2htjDYCHWTDy-6oW7f9DFRTkP0Ydt-8p-M80o">currently that's 1.3A</a></p>
+        <p class="article_text">If your phone is rooted patch the boot.img file included with the new build</p>
+        <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
+        <ul class="article_list">
+          <li><code class="article_code">fastboot flash recovery /path/to/recovery.img</code></li>
+          <li><code class="article_code">fastboot flash system /path/to/system.img</code></li>
+          <li><code class="article_code">fastboot flash vendor /path/to/vendor.img</code></li>
+        </ul>
+        <p class="article_text">If you want google services follow section 2.1 then come back to this step.
+        <p class="article_text">Run <code class="article_code">fastboot flash boot /path/to/boot.img</code> if your phone is rooted use your patched file instead</p>
+        <p class="article_text">Run <code class="article_code">fastboot reboot</code>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">2.1: Flashing gapps</h4>
+        <p class="article_text">Run <code class="article_code">fastboot flash boot /path/to/recovery.img reboot</code></p>
+        <p class="article_text">Once the recovery menu appears go into 'Apply update', 'Apply update from adb'</p>
+        <p class="article_text">Run <code class="article_code">adb sideload /path/to/gapps.zip</code> once the signature verification failed message appears select yes</p>
+        <p class="article_text">Select 'Advanced' then 'Reboot to bootloader'</p>
+        <p class="article_divider"></p>
+      </div>
+    <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
+    <label for="article_key2_apps" class="article_title">
+    <p class="article_name_divider"></p>
+      <svg class="article_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"
+       id="path1">
+      </svg>
+      <h3 class="article_name">Community made apps & App testing</h3>
+      <p class="article_date">Last editied: Mar 28 2026</p>
+    </label>
+    <input type="checkbox" id="article_key2_apps" name="article_key2_apps">
+      <div class="article_contents" id="article_key2_apps_contents">
+        <p class="article_divider"></p>
+        <h4 class="article_header">Keyboards</h4>
+        <p class="article_text"><a href="https://github.com/palsoftware/pastiera">Pastiera</a>: A foss keyboard app built for android phones with hardware keyboards. It's the default on Bochenek's rom builds.</p>
+        <p class="article_text"><a href="https://github.com/tim-ecoder/K12KB">K12KB</a>: The keyboard app made by Krab-ubica, comes pre-installed with their rom builds. Currently requires running <code class="article_code">adb shell settings put --user 0 secure show_ime_with_hard_keyboard 1</code> to work properly</p>
+        <p class="article_text"><a href="https://mega.nz/file/UcRRRQLL#77rrFSjS-Ho7yD6Ij6BNMNdvIVZeW179ErudUBxp8gI">BlackBerry Keyboard</a>: An unmodified version of the BlackBerry keyboard from android 8.1</p>
+        <p class="article_text"><a href="https://mega.nz/file/ZBJQXY4Q#2shEOGdU56T2yYTq02Zz4o5ARtkIMQhfK8h__AuAtZo">Krab-ubica's bb-keyboard</a>: A modified version of the blackberry keyboard with working gestures</p>
+        <p class="article_text"><a href="https://www.reddit.com/r/TheMinimalCompany/comments/1on6gmw/blackberry_keyboard_for_minimal_phone_test_2/">Hazem's BlackBerry Keyboard</a>: A modified version of the blackberry keyboard with material you colors and various fixes, currently has issues with some languages.</p>
+        <p class="article_text"><a href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin">Gboard</a>: Works but has issues with the ALT key.</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">Launchers</h4>
+        <p class="article_text"><a href="https://mega.nz/file/McxwVCyK#pBmpcu1kTb3mF45K3hTXb4G2HjlL0XQXSi1-iwhIeK0">BlackBerry Launcher</a>: The default launcher from android 8.1</p>
+        <p class="article_text"><a href="https://www.reddit.com/r/blackberry/comments/1rzgfur/blackberry_inspired_android_launcher/">Torchlight Launcher (PAID)</a>: A clone of blackberry OS 7 as an android launcher</p>
+        <p class="article_text"><a href="https://kisslauncher.com/">KISS</a>: A blazingly fast launcher focused on search</p>
+        <p class="article_text"><a href="https://kvaesitso.mm20.de/">Kvaesitso</a>: A seach-focuesd launcher with material you colors, currently needs the <a href="https://github.com/Magisk-Modules-Alt-Repo/enable-blurs">enable-blurs</a> magisk module for blur effects to work on the key2.</p>
+        <p class="article_text"><a href="https://lawnchair.app/">Lawnchair</a>: An open-source clone of google's pixel launcher</p>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header">Social Media</h4>
+        <p class="article_text">Instagram: Laggy when watching reels.
+        <p class="article_text">Facebook: Messenger may still has VOIP issues.
+        <p class="article_text">Tumblr: No issues.
+        <p class="article_divider"></p>
+      </div>
+    <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
+    </div>
+  </div>
+</body>
+</html>
