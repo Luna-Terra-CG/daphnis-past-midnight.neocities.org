@@ -1,2 +1,1 @@
-# daphnis-past-midnight.neocities.org
-My website and archives of things needed for it to function
+This may be out of date depending on if I remember to update it.
