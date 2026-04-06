@@ -102,10 +102,14 @@ a:active {
   color: var(--text);
   width: 300px;
 }
-.sidebar_index, .sidebar_blog, .sidebar_wiki, .sidebar_programs, .sidebar_websites, .sidebar_comms {
+.sidebar_link {
+  text-decoration: none;
+  color: inherit !important;
+}
+.sidebar_index, .sidebar_blog, .sidebar_wiki, .sidebar_links, .sidebar_media, .sidebar_comms {
   margin-right: 2px;
 }
-.sidebar_index:hover, .sidebar_blog:hover, .sidebar_wiki:hover, .sidebar_programs:hover, .sidebar_websites:hover, .sidebar_comms:hover {
+.sidebar_index:hover, .sidebar_blog:hover, .sidebar_wiki:hover, .sidebar_links:hover, .sidebar_media:hover, .sidebar_comms:hover {
   outline: 2px solid var(--text);
 }
 .ghost_margin {
@@ -313,47 +317,47 @@ li {
     <aside class="sidebar">
       <div class="sidebar_items">
         <p class="ghost_margin"> </p>
-        <div class="sidebar_index">
+        <a class="sidebar_link" href="index.html"><div class="sidebar_index">
           <svg class="sidebar_icon" viewBox="0 0 37 37" xmlns="http://www.w3.org/2000/svg">
             <path fill="currentColor" stroke-width="1.02778" d="M 1,19.5 V 1 H 19.5 38 V 19.5 38 H 19.5 1 Z m 30.83333,0 V 7.166667 H 19.5 7.166667 V 19.5 31.83333 H 19.5 31.83333 Z m -17.47222,0 V 14.36111 H 19.5 24.63889 V 19.5 24.63889 H 19.5 14.36111 Z">
           </svg>
           <p class="sidebar_text">Index</p>
-        </div>
+        </div></a>
         <p class="sidebar_seperator"></p>
-        <div class="sidebar_blog">
+        <a class="sidebar_link" href="blog.html"><div class="sidebar_blog">
           <svg class="sidebar_icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <path fill="currentColor" stroke-width="0.296296" d="M 0,16 V 0 H 15.999999 32 V 16 32 H 15.999999 0 Z m 27.555554,0 V 4.4444444 H 15.999999 4.4444444 V 16 27.555556 H 15.999999 27.555554 Z M 9.7777763,20 v -2.222222 h 6.2222227 6.222222 V 20 22.222222 H 15.999999 9.7777763 Z m 0,-8 V 9.7777778 h 6.2222227 6.222222 V 12 14.222222 H 15.999999 9.7777763 Z">
           </svg>
           <p class="sidebar_text">Mail & Alerts</p>
-        </div>
+        </div></a>
         <p class="sidebar_seperator"></p>
-        <div class="sidebar_wiki">
+        <a class="sidebar_link" href="wiki.html"><div class="sidebar_wiki">
           <svg class="sidebar_icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <path fill="currentColor" stroke-width="0.296296" d="M 0,29.777778 V 27.555556 H 16 32 V 29.777778 32 H 16 0 Z M 0,20.592593 V 18.37037 h 16 16 v 2.222223 2.222222 H 16 0 Z M 0,11.407407 V 9.1851852 H 16 32 V 11.407407 13.62963 H 16 0 Z M 0,2.2222221 V 0 H 16 32 V 2.2222221 4.4444444 H 16 0 Z">
           </svg>
           <p class="sidebar_text">Wiki</p>
-        </div>
+        </div></a>
         <p class="sidebar_seperator"> </p>
-        <div class="sidebar_programs">
+        <a class="sidebar_link" href="links.html"><div class="sidebar_links">
           <svg class="sidebar_icon" viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
             <path fill="currentColor" stroke-width="0.981482" d="M 0.71880083,101.09946 V 95.210576 H 6.6076896 12.496579 v 5.888884 5.88889 H 6.6076896 0.71880083 Z m 32.38888817,0 V 95.210576 H 69.913246 106.7188 v 5.888884 5.88889 H 69.913246 33.107689 Z M 0.71880083,53.988353 V 48.099464 H 6.6076896 12.496579 v 5.888889 5.888889 H 6.6076896 0.71880083 Z m 32.38888817,0 V 48.099464 H 69.913246 106.7188 v 5.888889 5.888889 H 69.913246 33.107689 Z M 0.71880083,6.8772416 V 0.98835275 H 6.6076896 12.496579 V 6.8772416 12.766131 H 6.6076896 0.71880083 Z m 32.38888817,0 V 0.98835275 H 69.913246 106.7188 V 6.8772416 12.766131 H 69.913246 33.107689 Z">
           </svg>
-          <p class="sidebar_text">Programs</p>
-        </div>
+          <p class="sidebar_text">Links</p>
+        </div></a>
         <p class="sidebar_seperator"></p>
-        <div class="sidebar_websites">
+        <a class="sidebar_link" href="media.html"><div class="sidebar_media">
           <svg class="sidebar_icon" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
             <path fill="currentColor" d="M 0,33.999999 V 0 h 24 24 v 23.999999 24 h -4 -4 v -20 V 7.9999999 H 24 8 v 29.9999991 30 H 4 0 Z m 20,10 v -24 h 4 4 v 20 20 h 16 16 v -30 V 0 h 4 4 v 33.999999 34 H 44 20 Z">
           </svg>
-          <p class="sidebar_text">Websites</p>
-        </div>
+          <p class="sidebar_text">Media</p>
+        </div></a>
         <p class="sidebar_seperator"></p>
-        <div class="sidebar_comms">
+        <a class="sidebar_link" href="comms.html"><div class="sidebar_comms">
           <svg class="sidebar_icon" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
             <path fill="currentColor" d="M 51,100.5 V 93 H 79.500001 108 v 7.5 7.5 H 79.500001 51 Z M 0,70.5 V 63 H 42 84.000001 V 70.5 78 H 42 0 Z M 33,39 V 33 H 70.5 108 v 6 6 H 70.5 33 Z M 0,7.5000003 V 0 H 46.5 93.000001 V 7.5000003 15 H 46.5 0 Z">
           </svg>
           <p class="sidebar_text">Guestbook</p>
-        </div>
+        </div></a>
         <p class="sidebar_seperator"></p>
       </div>
       <div class="sidebar_backarrow">
@@ -375,7 +379,7 @@ li {
        id="path1">
       </svg>
       <h3 class="article_name">Play Integrity Spoofing</h3>
-      <p class="article_date">Last editied: Mar 28 2026</p>
+      <p class="article_date">Last editied: Apr 03 2026</p>
     </label>
     <input type="checkbox" id="article_integritySpoofing" name="article_integritySpoofing">
       <div class="article_contents" id="article_integritySpoofing_contents">
@@ -408,7 +412,7 @@ li {
         <p class="article_divider_small"></p>
         <h4 class="article_header">3: Flashing Modules</h4>
         <p class="article_text">Download Integrity-Box <a href="https://github.com/MeowDump/Integrity-Box/releases/latest">from here</a>, you need '{version}-Integrity-Box-{DD}-{MM}-{YYYY}.zip'.</p>
-        <p class="article_text">Download ReZygisk <a href="https://github.com/PerformanC/ReZygisk/releases/latest">from here</a>, you need 'ReZygisk-{version}-release.zip'.</p>
+        <p class="article_text">Download ReZygisk <a href="https://github.com/PerformanC/ReZygisk/releases/tag/v1.0.0-rc.6">from here</a>, you need 'ReZygisk-{version}-release.zip'. NOTE: DO NOT update this module to the v1.0.0-rc.7 version.</p>
         <p class="article_text">Download TEESimulator <a href="https://github.com/JingMatrix/TEESimulator/releases/latest">from here</a>, you need 'TEESimulator-{version}-Release.zip'.</p>
         <p class="article_text">Download Zygisk-Assistant <a href="https://github.com/snake-4/Zygisk-Assistant/releases/latest">from here</a>, you need 'Zygisk-Assistant-{version}-{commitID}-release.zip'.</p>
         <p class="article_text">Open APatch and enter the APModule tab. (second from the right)</p>
@@ -430,7 +434,7 @@ li {
        id="path1">
       </svg>
       <h3 class="article_name">Install Guide for LineageOS 22.2 UNOFFICAL</h3>
-      <p class="article_date">Last editied: Mar 31 2026</p>
+      <p class="article_date">Last editied: Apr 03 2026</p>
     </label>
     <input type="checkbox" id="article_krab" name="article_krab">
       <div class="article_contents" id="article_krab_contents">
@@ -447,6 +451,7 @@ li {
         <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
         <p class="article_text">The linux version of the flashall.bat script is available <a href="https://daphnis-past-midnight.neocities.org/flash.sh">here</a>.</p>
         <p class="article_text">You will need to flash the firmware twice, to do so extract the downloaded 7z file and run the included 'flashall.bat' file, once the phone boots up to the setup screen reboot to the bootloader and run the flash script again.</p>
+        <p class="article_text">NOTE: If you get this error message: <code class="article_code">error: cannot load '.\img\oem_getvar:subvariantFAILED.img(remote:GetVarVariableNotFound)': Invalid argument</code> you can ignore it.</p>
         <p class="article_text">NOTE: The windows build of the unlock tool has a bug that makes the progress bar stay at 75% complete once the unlock finishes</p>
         <p class="article_text">Unlock you device's bootloader as shown <a href="https://xdaforums.com/t/unlock-bootloader-blackberry-key2-athena-key2-le-luna.4781022/">in Bochenek's guide</a>.</p>
         <p class="article_divider_small"></p>
@@ -464,8 +469,9 @@ li {
         <p class="article_divider_small"></p>
         <h4 class="article_header">3: Flashing the rom</h4>
         <p class="article_text">WARNING: THIS WILL DELETE ALL DATA STORED ON THE DEVICE</p>
-        <p class="article_text">Download the latest rom version posted on discord, <a href="https://mega.nz/file/AEhhBSDD#YykznA34EN59y1Q7l7TTfUpCxYaVeSQqK0d1m5WkHcM">currently that's 1.4A</a></p>
-        <p class="article_text">Once your download finishes extract the downloaded .zip file and enter the directory you extracted it to.</p>
+        <p class="article_text">Download the latest rom version posted on discord, <a href="https://mega.nz/file/RRQB0KCY#5OWmiiZ9XwRN2rETOL53oF-2M4cSN0E0LDUP2QHD-WI">currently that's 1.5c</a></p>
+        <p class="article_text">Once your download finishes extract the downloaded .zip file, the recovery.img file you need to flash later is inside the folder you extracted the zip file to.</p>
+        <p class="article_text">NOTE: If you have issues extracting the zip file the <a href="https://github.com/peazip/PeaZip/">PeaZip archive manager</a> is able to extract it</p>
         <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
         <p class="article_text">Run the following commands:
         <ul class="article_list">
@@ -506,7 +512,7 @@ li {
        id="path1">
       </svg>
       <h3 class="article_name">Updating to a newer LineageOS 22.2 UNOFFICAL build</h3>
-      <p class="article_date">Last editied: Mar 30 2026</p>
+      <p class="article_date">Last editied: Apr 03 2026</p>
     </label>
     <input type="checkbox" id="article_krab_update" name="article_krab_update">
       <div class="article_contents" id="article_krab_update_contents">
@@ -518,8 +524,8 @@ li {
         <p class="article_divider_small"></p>
         <h4 class="article_header">2: Updating the rom</h4>
         <p class="article_text">NOTE: Updating you ROM version does *NOT* wipe your data.</p>
-        <p class="article_text">Download the latest rom version posted on discord, <a href="https://mega.nz/file/AEhhBSDD#YykznA34EN59y1Q7l7TTfUpCxYaVeSQqK0d1m5WkHcM">currently that's 1.4A</a></p>
-        <p class="article_text">Once your download finishes extract the downloaded .zip file and enter the directory you extracted it to.</p>
+        <p class="article_text">Download the latest rom version posted on discord, <a href="https://mega.nz/file/RRQB0KCY#5OWmiiZ9XwRN2rETOL53oF-2M4cSN0E0LDUP2QHD-WI">currently that's 1.5c</a></p>
+        <p class="article_text">Once your download finishes extract the downloaded .zip file, the recovery.img file you need to flash later is inside the folder you extracted the zip file to.</p>
         <p class="article_text">If your phone is rooted patch the boot.img file included inside the the new build.</p>
         <p class="article_text">NOTE: If you have issues extracting the sideloadable zip file the <a href="https://github.com/peazip/PeaZip/">PeaZip archive manager</a> is able to extract it</p>
         <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
@@ -544,12 +550,20 @@ li {
        id="path1">
       </svg>
       <h3 class="article_name">LineageOS 22.2 changelog</h3>
-      <p class="article_date">Last editied: Mar 31 2026</p>
+      <p class="article_date">Last editied: Apr 03 2026</p>
     </label>
     <input type="checkbox" id="article_key2_changelog" name="article_key2_changelog">
       <div class="article_contents" id="article_key2_changelog_contents">
         <p class="article_divider"></p>
         <h4 class="article_header">NOTICE: This ONLY covers releases made after Bochenek left the project</h4>
+        <p class="article_divider_small"></p>
+        <h4 class="article_header"><a href="https://mega.nz/file/RRQB0KCY#5OWmiiZ9XwRN2rETOL53oF-2M4cSN0E0LDUP2QHD-WI">1.5c Apr 03 2026</a></h4>
+        <p class="article_text">March 01 security patches,</p>
+        <p class="article_text">Camera stability - less crashes,</p>
+        <p class="article_text">qwertz/azerty fixed - retail kl/kcm behavior,</p>
+        <p class="article_text">Keyboard settings -> show virtual keyboard toggle,</p>
+        <p class="article_text">Lokker app v1.1 updated,</p>
+        <p class="article_text">Widevine L3 OK, L1 Widevide disabled (will not work)</p>
         <p class="article_divider_small"></p>
         <h4 class="article_header"><a href="https://mega.nz/file/AEhhBSDD#YykznA34EN59y1Q7l7TTfUpCxYaVeSQqK0d1m5WkHcM">1.4a Mar 29 2026</a></h4>
         <p class="article_text">NFC fixes,</p>
@@ -591,8 +605,8 @@ li {
         <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"
        id="path1">
       </svg>
-      <h3 class="article_name">Community made apps & App testing</h3>
-      <p class="article_date">Last editied: Mar 28 2026</p>
+      <h3 class="article_name">Community made apps</h3>
+      <p class="article_date">Last editied: Apr 02 2026</p>
     </label>
     <input type="checkbox" id="article_key2_apps" name="article_key2_apps">
       <div class="article_contents" id="article_key2_apps_contents">
@@ -603,19 +617,13 @@ li {
         <p class="article_text"><a href="https://mega.nz/file/UcRRRQLL#77rrFSjS-Ho7yD6Ij6BNMNdvIVZeW179ErudUBxp8gI">BlackBerry Keyboard</a>: An unmodified version of the BlackBerry keyboard from android 8.1</p>
         <p class="article_text"><a href="https://mega.nz/file/ZBJQXY4Q#2shEOGdU56T2yYTq02Zz4o5ARtkIMQhfK8h__AuAtZo">Krab-ubica's bb-keyboard</a>: A modified version of the blackberry keyboard with working gestures</p>
         <p class="article_text"><a href="https://www.reddit.com/r/TheMinimalCompany/comments/1on6gmw/blackberry_keyboard_for_minimal_phone_test_2/">Hazem's BlackBerry Keyboard</a>: A modified version of the blackberry keyboard with material you colors and various fixes, currently has issues with some languages.</p>
-        <p class="article_text"><a href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin">Gboard</a>: Works but has issues with the ALT key.</p>
         <p class="article_divider_small"></p>
         <h4 class="article_header">Launchers</h4>
-        <p class="article_text"><a href="https://mega.nz/file/McxwVCyK#pBmpcu1kTb3mF45K3hTXb4G2HjlL0XQXSi1-iwhIeK0">BlackBerry Launcher</a>: The default launcher from android 8.1</p>
+        <p class="article_text"><a href="https://mega.nz/file/McxwVCyK#pBmpcu1kTb3mF45K3hTXb4G2HjlL0XQXSi1-iwhIeK0">BlackBerry Launcher</a>: The default launcher from android 8.1. It's default wallpaper set is also available <a href="https://archive.org/details/bbkey2_wallpapers">on this archive.org page</a>.</p>
         <p class="article_text"><a href="https://www.reddit.com/r/blackberry/comments/1rzgfur/blackberry_inspired_android_launcher/">Torchlight Launcher (PAID)</a>: A clone of blackberry OS 7 as an android launcher</p>
         <p class="article_text"><a href="https://kisslauncher.com/">KISS</a>: A blazingly fast launcher focused on search</p>
-        <p class="article_text"><a href="https://kvaesitso.mm20.de/">Kvaesitso</a>: A seach-focuesd launcher with material you colors, currently needs the <a href="https://github.com/Magisk-Modules-Alt-Repo/enable-blurs">enable-blurs</a> magisk module for blur effects to work on the key2.</p>
+        <p class="article_text"><a href="https://kvaesitso.mm20.de/">Kvaesitso</a>: A seach-focused launcher, currently needs the <a href="https://github.com/Magisk-Modules-Alt-Repo/enable-blurs">enable-blurs</a> magisk module for blur effects to work on the key2.</p>
         <p class="article_text"><a href="https://lawnchair.app/">Lawnchair</a>: An open-source clone of google's pixel launcher</p>
-        <p class="article_divider_small"></p>
-        <h4 class="article_header">Social Media</h4>
-        <p class="article_text">Instagram: Laggy when watching reels.
-        <p class="article_text">Facebook: Messenger may still has VOIP issues.
-        <p class="article_text">Tumblr: No issues.
         <p class="article_divider"></p>
       </div>
     <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
@@ -623,4 +631,5 @@ li {
   </div>
 </body>
 </html>
+
 
