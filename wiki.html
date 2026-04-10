@@ -458,7 +458,7 @@ li {
         <p class="article_divider_small"></p>
         <p class="article_text">Power off your device then boot into the bootloader again.</p>
         <h4 class="article_header">3.1: Unlocking the bootloader (Windows)</h4>
-        <p class="article_text">Download the windows unlock tool from <a href="https://mega.nz/file/dIIGUaJA#Zx-GFWvQgLoDZ--qLKJ-SGh8lnp734VozBlmPNKHFJE">here</a> and extract the zip file, if you don't already have it installed you may need to install the microsoft <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version">VC++ redists</a>.</p>
+        <p class="article_text">Download the windows unlock tool from <a href="https://mega.nz/file/dIIGUaJA#Zx-GFWvQgLoDZ--qLKJ-SGh8lnp734VozBlmPNKHFJE">here</a> and extract the zip file, if you don't already have it installed you may need to install the microslop <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version">VC++ redists</a>.</p>
         <p class="article_text">Open the unlock tool.</p>
         <p class="article_text">Press the scan in the upper right corner, once your devices is found press the 'Unlock BootLoader' button</p>
         <p class="article_text">NOTE: The progress bar will stay at 75% even once the bootloader unlock finishes</p>
@@ -473,6 +473,7 @@ li {
         <h4 class="article_header">4: Flashing LineageOS</h4>
         <p class="article_text">Download the latest rom version posted by krab-ubica on discord, <a href="https://mega.nz/file/RRQB0KCY#5OWmiiZ9XwRN2rETOL53oF-2M4cSN0E0LDUP2QHD-WI">currently that's 1.5c</a></p>
         <p class="article_text">Once your download finishes extract the downloaded .zip file, the recovery.img file you need to flash later is inside the folder you extracted the zip file to.</p>
+        <p class="article_text">NOTE: The package for gapps(Google Services) is not included with the rom download, if you want them you will need to download it seperately. The recommended package is <a href="https://github.com/MindTheGapps/15.0.0-arm64/releases/latest">MindTheGapps</a>.</p>
         <p class="article_text">NOTE: If you have issues extracting the zip file the <a href="https://github.com/peazip/PeaZip/">PeaZip archive manager</a> is able to extract it</p>
         <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
         <p class="article_text">Run the following commands:
@@ -483,10 +484,9 @@ li {
           <li><code class="article_code">fastboot reboot</code></li>
         </ul>
         <p class="article_text">NOTE: You navigate the recovery by using the volume keys to move the cursor and the power button the select.</p>
-        <p class="article_text">Once the LineageOS recovery appears select 'Apply update', 'Apply update from adb'</p>
+        <p class="article_text">Once the LineageOS recovery appears select 'Apply update' -> 'Apply update from adb'</p>
         <p class="article_text">Run <code class="article_code">adb sideload /path/to/lineage-build.zip</code></p>
-        <p class="article_text">NOTE: The package for gapps(Google Services) is not included with the rom download, if you want them you will need to download it seperately. The recommended package is <a href="https://github.com/MindTheGapps/15.0.0-arm64/releases/latest">MindTheGapps</a>.</p>
-        <p class="article_text">If you have any additional zips you want to flash(ie: gapps, magisk) go into 'Apply update', 'Apply update from adb' and run <code class="article_code">adb sideload /path/to/package.zip</code>, once the signature verification failed messages appears select yes.</p>
+        <p class="article_text">If you have any additional zips you want to flash(ie: gapps, magisk) go into 'Apply update' -> 'Apply update from adb' and run <code class="article_code">adb sideload /path/to/package.zip</code>, once the signature verification failed messages appears select yes.</p>
         <p class="article_text">If you get a not enough space on system partion error when flashing gapps go into 'Factory reset/Format data' and format the system partition, then re-flash lineageOS and gapps.</p>
         <p class="article_text">Select the 'Reboot system'</p>
         <p class="article_text">NOTE: The first boot can take up to 10-15 minutes</p>
@@ -518,17 +518,17 @@ li {
         <p class="article_text">NOTE: If you have issues extracting the zip file the <a href="https://github.com/peazip/PeaZip/">PeaZip archive manager</a> is able to extract it</p>
         <p class="article_text">If your phone is rooted patch the boot.img file included with the new build.</p>
         <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
-        <p class="article_text">Run the following commands:
+        <p class="article_text">Run the following commands:</p>
         <ul class="article_list">
           <li><code class="article_code">fastboot flash recovery /path/to/recovery.img</code></li>
           <li><code class="article_code">fastboot flash boot /path/to/recovery.img</code></li>
           <li><code class="article_code">fastboot reboot</code></li>
         </ul>
-        <p class="article_text">Once the LineageOS recovery appears select 'Apply update', 'Apply update from adb'</p>
+        <p class="article_text">Once the LineageOS recovery appears select 'Apply update' -> 'Apply update from adb'</p>
         <p class="article_text">Run <code class="article_code">adb sideload /path/to/lineage-build.zip</code></p>
         <p class="article_text">If you have google services installed go into 'Apply update' -> 'Apply update from adb' and run <code class="article_code">adb sideload /path/to/gapps.zip</code> once the signature verification failed messages appears select yes.</p>
         <p class="article_text">If your rooted select 'Advanced' then 'Reboot to bootloader', once the bootloader appears flash your moddified boot.img file and boot the system.</p>
-        <p class="article_text">If it's not rooted select 'Reboot system'
+        <p class="article_text">If it's not rooted select 'Reboot system'</p>
         <p class="article_divider"></p>
       </div>
     <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
