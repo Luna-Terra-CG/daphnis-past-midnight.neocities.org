@@ -270,8 +270,7 @@ a:active {
   word-wrap: break-word;
   font-family: 'Roboto';
   font-size: 16px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 3px;
   align-self: flex-start;
 }
 .article_code {
@@ -379,7 +378,7 @@ li {
        id="path1">
       </svg>
       <h3 class="article_name">Play Integrity Spoofing</h3>
-      <p class="article_date">Last editied: Apr 08 2026</p>
+      <p class="article_date">Last editied: Apr 13 2026</p>
     </label>
     <input type="checkbox" id="article_integritySpoofing" name="article_integritySpoofing">
       <div class="article_contents" id="article_integritySpoofing_contents">
@@ -412,7 +411,7 @@ li {
         <p class="article_divider_small"></p>
         <h4 class="article_header">3: Flashing Modules</h4>
         <p class="article_text">Download Integrity-Box <a href="https://github.com/MeowDump/Integrity-Box/releases/latest">from here</a>, you need '{version}-Integrity-Box-{DD}-{MM}-{YYYY}.zip'.</p>
-        <p class="article_text">Download ReZygisk <a href="https://github.com/PerformanC/ReZygisk/releases/tag/v1.0.0-rc.6">from here</a>, you need 'ReZygisk-{version}-release.zip'. NOTE: DO NOT update this module to the v1.0.0-rc.7 version.</p>
+        <p class="article_text">Download NeoZygisk <a href="https://github.com/JingMatrix/NeoZygisk/releases/latest">from here</a>, you need 'NeoZygisk-{version}-release.zip'.</p>
         <p class="article_text">Download TEESimulator <a href="https://github.com/JingMatrix/TEESimulator/releases/latest">from here</a>, you need 'TEESimulator-{version}-Release.zip'.</p>
         <p class="article_text">Download Zygisk-Assistant <a href="https://github.com/snake-4/Zygisk-Assistant/releases/latest">from here</a>, you need 'Zygisk-Assistant-{version}-{commitID}-release.zip'.</p>
         <p class="article_text">Open APatch and enter the APModule tab. (second from the right)</p>
@@ -424,6 +423,7 @@ li {
         <p class="article_text">On the card for <i>.Integrity</i> Box tap the 'Action' button</p>
         <p class="article_text">(Optional): Configure Integrity Box, you can open it's configuration utility by pressing the 'Open' button on it's card in APModule</p>
         <p class="article_text">If you need to hide all system modifications from an app go into APatch's superuser(center) tab and tap on the app's name then enable the 'Exclude modifications' toggle.</p>
+        <p class="article_text">You may need to disable the Zygisk Assistant module for google wallet tap to pay to work properly.</p> 
         <p class="article_divider"></p>
       </div>
     <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
@@ -473,8 +473,9 @@ li {
         <h4 class="article_header">4: Flashing LineageOS</h4>
         <p class="article_text">Download the latest rom version posted by krab-ubica on discord, <a href="https://mega.nz/file/RRQB0KCY#5OWmiiZ9XwRN2rETOL53oF-2M4cSN0E0LDUP2QHD-WI">currently that's 1.5c</a></p>
         <p class="article_text">Once your download finishes extract the downloaded .zip file, the recovery.img file you need to flash later is inside the folder you extracted the zip file to.</p>
-        <p class="article_text">NOTE: The package for gapps(Google Services) is not included with the rom download, if you want them you will need to download it seperately. The recommended package is <a href="https://github.com/MindTheGapps/15.0.0-arm64/releases/latest">MindTheGapps</a>.</p>
-        <p class="article_text">NOTE: If you have issues extracting the zip file the <a href="https://github.com/peazip/PeaZip/">PeaZip archive manager</a> is able to extract it</p>
+        <p class="article_text">If you have issues extracting the zip file the <a href="https://github.com/peazip/PeaZip/">PeaZip archive manager</a> is able to extract it.</p>
+        <p class="article_text">The package for gapps(Google Services) is not included with the rom download, if you want them you will need to download it seperately. The recommended package is <a href="https://github.com/MindTheGapps/15.0.0-arm64/releases/latest">MindTheGapps</a>.</p>
+        <p class="article_divider_small"></p>
         <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
         <p class="article_text">Run the following commands:
         <ul class="article_list">
