@@ -303,6 +303,12 @@ li {
   background: transparent;
   height: 2px;
 }
+pre {
+  width:auto;
+  padding: 0px;
+  overflow: scroll;
+}
+
 </style>
 </head>
 
@@ -432,7 +438,7 @@ li {
           <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
         </svg>
         <h3 class="article_name">Install Guide for LineageOS 22.2 UNOFFICAL</h3>
-        <p class="article_date">Last editied: Apr 17 2026</p>
+        <p class="article_date">Last editied: Apr 18 2026</p>
       </label>
       <input type="checkbox" id="article_krab" name="article_krab">
         <div class="article_contents" id="article_krab_contents">
@@ -447,11 +453,12 @@ li {
           <p class="article_divider_small"></p>
           <h4 class="article_header">2: Stock Firmware Preparation</h4>
           <p class="article_text">Remove your lockscreen password and google account from your device</p>
-          <p class="article_text">If you are unable to remove your lockscreen password factory reset your phone from settings AFTER removing you google account.</p>
+          <p class="article_text">If you are the option to set your screen lock to swipe is grayed out factory reset your phone from settings AFTER removing you google account.</p>
+          <p class="article_text">If you do not remember your password follow <a href="https://youtu.be/HPddEUfth7A">theses instructions</a> from the device setup.</p>
           <p class="article_text">Download the <a href="https://mega.nz/file/pdBjAARa#l5WNgDKoaRWN-ORkK-lBPhGqkwyFqz91HlU3r-CGWfs">ACQ160 Autoloader</a>.</p>
           <p class="article_text">Power off your device then hold volume down and power until the bootloader menu is shown</p>
-          <p class="article_text">The linux version of the flashall.bat script is available <a href="https://daphnis-past-midnight.neocities.org/flash.sh">here</a>.</p>
-          <p class="article_text">You will need to flash the firmware twice, to do so extract the downloaded 7z file and run the included 'flashall.bat' file, once the phone boots up to the setup screen reboot to the bootloader and run the flash script again.</p>
+          <p class="article_text">You will need to flash the firmware twice, to do so extract the downloaded 7z file and run the included 'flashall.bat' file, once the phone boots up to the setup reboot to the bootloader and repeat</p>
+          <p class="article_text">A linux version of the flashall.bat script is available <a href="https://daphnis-past-midnight.neocities.org/flash.sh">here</a>.</p>
           <p class="article_text">If you get this error message: <code class="article_code">error: cannot load '.\img\oem_getvar:subvariantFAILED.img(remote:GetVarVariableNotFound)': Invalid argument</code> you can ignore it.</p>
           <p class="article_divider_small"></p>
           <p class="article_text">Power off your device then boot into the bootloader again.</p>
@@ -610,8 +617,8 @@ li {
           <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"
          id="path1"></path>
         </svg>
-        <h3 class="article_name">Community made apps</h3>
-        <p class="article_date">Last editied: Apr 17 2026</p>
+        <h3 class="article_name">Community made apps & tweaks</h3>
+        <p class="article_date">Last editied: Apr 18 2026</p>
       </label>
       <input type="checkbox" id="article_key2_apps" name="article_key2_apps">
         <div class="article_contents" id="article_key2_apps_contents">
@@ -632,6 +639,30 @@ li {
           <p class="article_divider_small"></p>
           <h4 class="article_header">Other</h4>
           <p class="article_text"><a href="https://mega.nz/file/QZ5DwTTS#DUc2Oo_Dc6MZwkEUul9ViSHdiu99TRs8OXx9BUW8jxg">BigKaka 8.8 MOD</a>: A build of Bigkaka's google camera mod with fixes for the key2.</p>
+          <p class="article_divider_small"></p>
+          <h4 class="article_header">Tweaks</h4>
+          <p class="article_text">Resizing swap:
+          <p class="article_text">NOTE: This will have side effects!!!</p>
+          <p class="article_text">Enable 'USB debugging' and 'Rooted debugging' in developer options</p>
+          <p class="article_text">Run <code class="article_code">adb root</code></p>
+          <p class="article_text">If you want 2gb of swap run this command</p>
+<pre class="article_code">adb shell "mkdir -p /data/adb/service.d && rm /data/adb/service.d/99_delayed_zram.sh && echo '#!/system/bin/sh
+echo 3 > /proc/sys/vm/drop_caches
+swapoff /dev/block/zram0
+echo 1 > /sys/block/zram0/reset
+echo 2147483648 > /sys/block/zram0/disksize
+mkswap /dev/block/zram0
+swapon /dev/block/zram0' >> /data/adb/service.d/99_delayed_zram.sh && chmod 755 /data/adb/service.d/99_delayed_zram.sh"
+</pre>
+          <p class="article_text">If you want 4gb of swap run this command</p>
+<pre class="article_code">adb shell "mkdir -p /data/adb/service.d && rm /data/adb/service.d/99_delayed_zram.sh && echo '#!/system/bin/sh
+echo 3 > /proc/sys/vm/drop_caches
+swapoff /dev/block/zram0
+echo 1 > /sys/block/zram0/reset
+echo 4294967296 > /sys/block/zram0/disksize
+mkswap /dev/block/zram0
+swapon /dev/block/zram0' >> /data/adb/service.d/99_delayed_zram.sh && chmod 755 /data/adb/service.d/99_delayed_zram.sh"
+</pre>
           <p class="article_divider"></p>
         </div>
       <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
