@@ -438,7 +438,7 @@ pre {
           <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
         </svg>
         <h3 class="article_name">Install Guide for LineageOS 22.2 UNOFFICAL</h3>
-        <p class="article_date">Last editied: Apr 18 2026</p>
+        <p class="article_date">Last editied: Apr 22 2026</p>
       </label>
       <input type="checkbox" id="article_krab" name="article_krab">
         <div class="article_contents" id="article_krab_contents">
@@ -447,7 +447,7 @@ pre {
           <p class="article_text">NOTE: If you have any issues installing the rom you can ask for help in the BlackBerry Android hideout discord server, the invite is <a href="https://discord.gg/BuJURQD6Qb">https://discord.gg/BuJURQD6Qb</a></p>
           <p class="article_text">A BlackBerry key2, the key2le is not currently supported.</p>
           <p class="article_text">A Windows or linux computer</p>
-          <p class="article_text">You have the android platform tools installed, if you don't you can get them on windows <a href="https://developer.android.com/tools/releases/platform-tools">here</a>, on linux it's packaged on most distros as <code class="article_code">android-tools</code> and as <code class="article_code">android-sdk-platform-tools</code> on debian linux and it derivatives.</p>
+          <p class="article_text">You have the android platform tools installed, if you don't you can get them for windows <a href="https://developer.android.com/tools/releases/platform-tools">here</a> and on linux it's packaged as <code class="article_code">android-tools</code> on most distros and as <code class="article_code">android-sdk-platform-tools</code> on debian linux and it derivatives.</p>
           <p class="article_text">(Windows): You have the <a href="https://mega.nz/file/YVI0VKpR#38iPAMEtTwjMHS5Ykts37pLegy9ktQ2t1X-Ro2M82WI">BlackBerry USB drivers</a> installed</p>
           <p class="article_text">NOTE: If you don't know the path of a file you can drag it from your filemanager into a terminal window</p>
           <p class="article_divider_small"></p>
@@ -618,7 +618,7 @@ pre {
          id="path1"></path>
         </svg>
         <h3 class="article_name">Community made apps & tweaks</h3>
-        <p class="article_date">Last editied: Apr 18 2026</p>
+        <p class="article_date">Last editied: Apr 21 2026</p>
       </label>
       <input type="checkbox" id="article_key2_apps" name="article_key2_apps">
         <div class="article_contents" id="article_key2_apps_contents">
@@ -646,22 +646,22 @@ pre {
           <p class="article_text">Enable 'USB debugging' and 'Rooted debugging' in developer options</p>
           <p class="article_text">Run <code class="article_code">adb root</code></p>
           <p class="article_text">If you want 2gb of swap run this command</p>
-<pre class="article_code">adb shell "mkdir -p /data/adb/service.d && rm /data/adb/service.d/99_delayed_zram.sh && echo '#!/system/bin/sh
+<pre class="article_code">adb shell "mkdir -p /data/adb/service.d && echo '#!/system/bin/sh
 echo 3 > /proc/sys/vm/drop_caches
 swapoff /dev/block/zram0
 echo 1 > /sys/block/zram0/reset
 echo 2147483648 > /sys/block/zram0/disksize
 mkswap /dev/block/zram0
-swapon /dev/block/zram0' >> /data/adb/service.d/99_delayed_zram.sh && chmod 755 /data/adb/service.d/99_delayed_zram.sh"
+swapon /dev/block/zram0' > /data/adb/service.d/99_delayed_zram.sh && chmod 755 /data/adb/service.d/99_delayed_zram.sh"
 </pre>
           <p class="article_text">If you want 4gb of swap run this command</p>
-<pre class="article_code">adb shell "mkdir -p /data/adb/service.d && rm /data/adb/service.d/99_delayed_zram.sh && echo '#!/system/bin/sh
+<pre class="article_code">adb shell "mkdir -p /data/adb/service.d&& echo '#!/system/bin/sh
 echo 3 > /proc/sys/vm/drop_caches
 swapoff /dev/block/zram0
 echo 1 > /sys/block/zram0/reset
 echo 4294967296 > /sys/block/zram0/disksize
 mkswap /dev/block/zram0
-swapon /dev/block/zram0' >> /data/adb/service.d/99_delayed_zram.sh && chmod 755 /data/adb/service.d/99_delayed_zram.sh"
+swapon /dev/block/zram0' > /data/adb/service.d/99_delayed_zram.sh && chmod 755 /data/adb/service.d/99_delayed_zram.sh"
 </pre>
           <p class="article_divider"></p>
         </div>
