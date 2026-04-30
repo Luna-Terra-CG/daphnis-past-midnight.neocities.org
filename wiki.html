@@ -311,6 +311,7 @@ pre {
   width:auto;
   padding: 0px;
   overflow: scroll;
+  margin-block: 0em 0em;
 }
 
 </style>
@@ -663,6 +664,7 @@ pre {
           <p class="article_text">Enable 'USB debugging' and 'Rooted debugging' in developer options</p>
           <p class="article_text">Run <code class="article_code">adb root</code></p>
           <p class="article_text">If you want 2gb of swap run this command</p>
+          <p class="article_divider_small"></p>
 <pre class="article_code">adb shell "mkdir -p /data/adb/service.d && echo '#!/system/bin/sh
 echo 3 > /proc/sys/vm/drop_caches
 swapoff /dev/block/zram0
@@ -671,7 +673,10 @@ echo 2147483648 > /sys/block/zram0/disksize
 mkswap /dev/block/zram0
 swapon /dev/block/zram0' > /data/adb/service.d/99_delayed_zram.sh && chmod 755 /data/adb/service.d/99_delayed_zram.sh"
 </pre>
+          <p class="article_divider_small"></p>
+          <p class="article_divider_small"></p>
           <p class="article_text">If you want 4gb of swap run this command</p>
+          <p class="article_divider_small"></p>
 <pre class="article_code">adb shell "mkdir -p /data/adb/service.d&& echo '#!/system/bin/sh
 echo 3 > /proc/sys/vm/drop_caches
 swapoff /dev/block/zram0
