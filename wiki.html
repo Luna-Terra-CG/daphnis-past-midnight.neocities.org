@@ -441,7 +441,7 @@ pre {
         <svg class="article_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
           <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
         </svg>
-        <h3 class="article_name">Install Guide for LineageOS 22.2 UNOFFICAL</h3>
+        <h3 class="article_name">Install Guide for LineageOS UNOFFICIAL</h3>
         <p class="article_date">Last editied: Apr 25 2026</p>
       </label>
       <input type="checkbox" id="article_krab" name="article_krab">
@@ -471,13 +471,13 @@ pre {
           <p class="article_text">Open the unlock tool.</p>
           <p class="article_text">Press the scan in the upper right corner, once your devices is found press the 'Unlock BootLoader' button</p>
           <p class="article_text">NOTE: The progress bar will stay at 75% even once the bootloader unlock finishes</p>
-          <p class="article_text">If the unlock was successful, on the phone MODE: will change from <code class="article_code">PRODUCT</code> to <code class="article_code">FACTORY (65535)</code></p>
+          <p class="article_text">If the unlock was successful, on the phone MODE: will change from <code class="article_code">PRODUCT</code> to <code class="article_code">FACTORY</code></p>
           <p class="article_divider_small"></p>
           <h4 class="article_header">3.2: Unlocking the bootloader (Linux)</h4>
           <p class="article_text">Download kibo from <a href="https://github.com/BotchedRPR/kibo/releases">Bochenek's github page</a> and extract the zip file you downloaded.</p>
           <p class="article_text">Mark the kibo binary included with the zip file as executable.</p>
           <p class="article_text">From a terminal run <code class="article_code">./kibo unlock</code></p>
-          <p class="article_text">If the unlock was successful, on the phone MODE: will change from <code class="article_code">PRODUCT</code> to <code class="article_code">FACTORY (65535)</code></p>
+          <p class="article_text">If the unlock was successful, on the phone MODE: will change from <code class="article_code">PRODUCT</code> to <code class="article_code">FACTORY</code></p>
           <p class="article_divider_small"></p>
           <h4 class="article_header">4: Flashing LineageOS</h4>
           <p class="article_text">Download the latest rom version posted on discord, <a href="https://mega.nz/file/xAgSQRDQ#SH1kS5XRl8jjbRHeXoAIPuo34ge3EjrNfycPOIq0dvk">currently that's 1.8a</a>.</p>
@@ -508,8 +508,8 @@ pre {
         <svg class="article_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
           <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
         </svg>
-        <h3 class="article_name">Updating to a newer LineageOS 22.2 UNOFFICAL build</h3>
-        <p class="article_date">Last editied: Apr 25 2026</p>
+        <h3 class="article_name">Updating to a newer LineageOS UNOFFICIAL build</h3>
+        <p class="article_date">Last editied: Apr 30 2026</p>
       </label>
       <input type="checkbox" id="article_krab_update" name="article_krab_update">
         <div class="article_contents" id="article_krab_update_contents">
@@ -545,6 +545,14 @@ pre {
           <p class="article_text">If you have google services installed go into 'Apply update' -> 'Apply update from adb' and run <code class="article_code">adb sideload /path/to/gapps.zip</code> once the signature verification failed messages appears select yes.</p>
           <p class="article_text">If your rooted select 'Advanced' then 'Reboot to bootloader', once the bootloader appears flash your moddified boot.img file and boot the system.</p>
           <p class="article_text">If it's not rooted select 'Reboot system'</p>
+          <p class="article_divider_small"></p>
+          <h4 class="article_header">3: Fixing app installs failing</h4>
+          <p class="article_text">NOTE: This is a rare bug that only happens when downgrading, if this happens to you when upgrading please contact 'Krab-Ubica' in the discord server</p>
+          <p class="article_text">Boot into recovery</p>
+          <p class="article_text">NOTE: The easiest way to get into recovery is by using the 'Advanced restart' option in settings</p>
+          <p class="article_text">Once the recovery menu appears select Advanced -> Enable ADB</p>
+          <p class="article_text">From a computer run <code class="article_code">adb shell wipe-frp</code></p>
+          <p class="article_text">Power off your device or reboot it using the option in the recovery menu</p>
           <p class="article_divider"></p>
         </div>
       <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
@@ -553,13 +561,13 @@ pre {
         <svg class="article_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
           <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
         </svg>
-        <h3 class="article_name">LineageOS 22.2 changelog</h3>
+        <h3 class="article_name">LineageOS UNOFFICIAL changelog</h3>
         <p class="article_date">Last editied: Apr 25 2026</p>
       </label>
       <input type="checkbox" id="article_key2_changelog" name="article_key2_changelog">
         <div class="article_contents" id="article_key2_changelog_contents">
           <p class="article_divider"></p>
-          <h4 class="article_header">This ONLY covers releases made after Bochenek left the project</h4>
+          <h4 class="article_header">This ONLY covers releases made after BotchedRPR left the project</h4>
           <p class="article_divider_small"></p>
           <h4 class="article_header"><a href="https://mega.nz/file/xAgSQRDQ#SH1kS5XRl8jjbRHeXoAIPuo34ge3EjrNfycPOIq0dvk">1.8a Apr 25 2026</a></h4>
           <p class="article_text">Keyboard-blacklight Sadako's algo implemented,</p>
@@ -626,7 +634,7 @@ pre {
          id="path1"></path>
         </svg>
         <h3 class="article_name">Community made apps & tweaks</h3>
-        <p class="article_date">Last editied: Apr 27 2026</p>
+        <p class="article_date">Last editied: Apr 30 2026</p>
       </label>
       <input type="checkbox" id="article_key2_apps" name="article_key2_apps">
         <div class="article_contents" id="article_key2_apps_contents">
@@ -635,7 +643,7 @@ pre {
           <p class="article_text"><a href="https://github.com/palsoftware/pastiera">Pastiera</a>: A foss keyboard app built for android phones with hardware keyboards. It's the default on Bochenek's rom builds. Make sure to the latest nightly build since the stable has issues with the ALT and SYM keys.</p>
           <p class="article_text"><a href="https://github.com/tim-ecoder/K12KB">K12KB</a>: The keyboard app made by Krab-ubica, comes pre-installed with their rom builds. Currently requires enableing 'Allow on-screen keyboard' in Settings -> System -> BlackBerry keyboard to work properly</p>
           <p class="article_text"><a href="https://mega.nz/file/UcRRRQLL#77rrFSjS-Ho7yD6Ij6BNMNdvIVZeW179ErudUBxp8gI">BlackBerry Keyboard</a>: An unmodified version of the BlackBerry keyboard from android 8.1</p>
-          <p class="article_text"><a href="https://mega.nz/file/ZBJQXY4Q#2shEOGdU56T2yYTq02Zz4o5ARtkIMQhfK8h__AuAtZo">Krab-ubica's bb-keyboard</a>: A modified version of the blackberry keyboard with working gestures. A version with vietnamese support is available <a href="https://mega.nz/file/tmAShbRa#2Sf9X3QNpOSuQZEEahy76o2ibs7eWSOipvJ4Vf_j9Kc">here</a>. Vietnamese version is made by ChloeJP.</p>
+          <p class="article_text"><a href="https://mega.nz/file/ZBJQXY4Q#2shEOGdU56T2yYTq02Zz4o5ARtkIMQhfK8h__AuAtZo">Krab-ubica's bb-keyboard</a>: A modified version of the blackberry keyboard with working gestures. Chloeejp has made a version with all language packs available <a href="https://mega.nz/file/Ry40wJLC#jOgVAl-g5AdfvTznBI7EBa1EeIMpf4oeBCdp6FNOTa8">here</a> & one with only vietnamese available <a href="https://mega.nz/file/tmAShbRa#2Sf9X3QNpOSuQZEEahy76o2ibs7eWSOipvJ4Vf_j9Kc">here</a>.</p>
           <p class="article_text"><a href="https://www.reddit.com/r/TheMinimalCompany/comments/1on6gmw/blackberry_keyboard_for_minimal_phone_test_2/">Hazem's BlackBerry Keyboard</a>: A modified version of the blackberry keyboard with material you colors and various fixes, it's language packs are available <a href="https://drive.google.com/drive/folders/1JhDQKay7i6ayRks8VvUDY4khAhSqIflp?usp=share_link">here</a>.</p>
           <p class="article_divider_small"></p>
           <h4 class="article_header">Launchers</h4>
@@ -647,6 +655,8 @@ pre {
           <p class="article_divider_small"></p>
           <h4 class="article_header">Other</h4>
           <p class="article_text"><a href="https://mega.nz/file/QZ5DwTTS#DUc2Oo_Dc6MZwkEUul9ViSHdiu99TRs8OXx9BUW8jxg">BigKaka 8.8 MOD</a>: A build of Bigkaka's google camera mod with fixes for the key2.</p>
+          <p class="article_text"><a href="https://github.com/aistra0528/Hail">Hail</a>: An app to stop certain apps from running in the background or being cached to ram, useful if your trying use as your main phone or have alot of apps installed</p>
+          <p class="article_text"><a href="https://github.com/keymapperorg/KeyMapper">KeyMapper</a>: Remap any button and set custom key binds easily</p>
           <p class="article_divider_small"></p>
           <h4 class="article_header">Resizing Swap</h4>
           <p class="article_text">NOTE: This does not work without root</p>
@@ -679,7 +689,7 @@ swapon /dev/block/zram0' > /data/adb/service.d/99_delayed_zram.sh && chmod 755 /
           <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
         </svg>
         <h3 class="article_name">Reverting to Android 8.1</h3>
-        <p class="article_date">Last editied: Apr 27 2026</p>
+        <p class="article_date">Last editied: Apr 30 2026</p>
       </label>
       <input type="checkbox" id="article_key2_a8" name="article_key2_a8">
         <div class="article_contents" id="article_key2_a8_contents">
@@ -687,10 +697,14 @@ swapon /dev/block/zram0' > /data/adb/service.d/99_delayed_zram.sh && chmod 755 /
           <h4 class="article_header">1: Flashing Android 8.1</h4>
           <p class="article_text">NOTE: If you have an indian region device you will need to flash the <a href="https://mega.nz/file/AQBxSYKS#lUPwt9xOJC4UGpazU85MVAhHKGVYLUK3uSJE20Qtaj4">ABN088 Auto Loader</a> after you have relocked the bootloader</p>
           <p class="article_text">Download the <a href="https://mega.nz/file/pdBjAARa#l5WNgDKoaRWN-ORkK-lBPhGqkwyFqz91HlU3r-CGWfs">ACQ160 Autoloader</a> and extract the 7z file it downloads as.</p>
+          <p class="article_text">Enable 'Advanced restart' in Settings -> System -> Buttons -> Power menu</p>
+          <p class="article_text">Hold the power button until the power menu show then select Restart -> Recovery</p>
+          <p class="article_text">Once the recovery menu appears select Advanced -> Enable ADB</p>
+          <p class="article_text">From a computer run <code class="article_code">adb shell wipe-frp</code></p>
           <p class="article_text">Power off your device then hold volume down and power until the bootloader menu is show.</p>
           <p class="article_text">Run the flashall.bat script from the ACQ160 autoloader.</p>
           <p class="article_text">A linux version of the flashall.bat script is available <a href="https://daphnis-past-midnight.neocities.org/flash.sh">here</a>.</p>
-          <p class="article_text">If you want to relock the bootloader or have an indian model follow the locking the bootloader section for your operating system.</p>
+          <p class="article_text">If you want to relock the bootloader or have an india model follow the locking the bootloader section for your operating system.</p>
           <p class="article_divider_small"></p>
           <h4 class="article_header">2.1: Locking the bootloader (Windows)</h4>
           <p class="article_text">Download the windows unlock tool from <a href="https://mega.nz/file/dIIGUaJA#Zx-GFWvQgLoDZ--qLKJ-SGh8lnp734VozBlmPNKHFJE">here</a> and extract the zip file, if you don't already have it installed you may need to install the microslop <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version">VC++ redists</a>.</p>
@@ -712,7 +726,7 @@ swapon /dev/block/zram0' > /data/adb/service.d/99_delayed_zram.sh && chmod 755 /
           <p class="article_divider_small"></p>
           <h4 class="article_header">3: Fixing wifi, bluetooth & cellular not working</h4>
           <p class="article_text">NOTE: This section is on how to fix a rare bug, you will most likely not experience it when reverting.</p>
-          <p class="article_text">If you relocked it unlock the bootloader again as shown in install guide.</p>
+          <p class="article_text">If you relocked the bootloader unlock it again as shown in install guide.</p>
           <p class="article_text">Download the LineageOS recovery from <a href="https://fumo.enterprises/recovery-athena.img">here</a>.</p>
           <p class="article_text">Run the following commands:</p>
           <ul class="article_list">
