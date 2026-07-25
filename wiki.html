@@ -553,7 +553,7 @@ footer {
           <p class="article_divider_small"></p>
           
           <h4 class="article_header">I want to contribute, where is the source code?</h4>
-            <p class="article_text">Key2: <a href="https://github.com/orgs/Lineage-BBKey2">https://github.com/orgs/Lineage-BBKey2</a></p> (Previously <a href="https://github.com/tim-ecoder/lineageos_blackberry_athena">https://github.com/tim-ecoder/lineageos_blackberry_athena</a></p>)
+            <p class="article_text">Key2: <a href="https://github.com/orgs/Lineage-BBKey2">https://github.com/orgs/Lineage-BBKey2</a> (Previously <a href="https://github.com/tim-ecoder/lineageos_blackberry_athena">https://github.com/tim-ecoder/lineageos_blackberry_athena</a>)</p>
             <p class="article_text">Key2LE: <a href="https://github.com/Lineage-BBKey2LE">https://github.com/Lineage-BBKey2LE</a></p>
           <p class="article_divider_small"></p>
           
@@ -634,11 +634,12 @@ footer {
             <p class="article_text">If you have a Key2LE (Luna) download the Key2LE version of LOS22.2 build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.9a/LOS22_Key2LE_ZKrab-v1.9a.zip">ZKrab-v1.9a</a>.</p>
             <p class="article_text">The package for gapps(Google Services) is not included with the rom download, if you want them you will need to download it seperately.</p>
             <p class="article_text">The recommended gapps package for android 15 is <a href="https://github.com/MindTheGapps/15.0.0-arm64/releases/latest">MindTheGapps 15</a>, and <a href="https://github.com/MindTheGapps/16.0.0-arm64/releases/latest">MindTheGapps 16</a> for android 16.</p>
-            <p class="article_text">Once your rom download finishes extract it's .zip file, and enter the directory it extracted to.</p>
+            <p class="article_text">Once your rom download finishes extract the .zip file</p>
             <p class="article_divider_small"></p>
-            
+
+            <p class="article_text">Open a terminal/command prompt where you extracted the zip to</p>
             <p class="article_text">Boot into the bootloader by holding volume down and the power button.</p>
-            <p class="article_text">Run the following commands:
+            <p class="article_text">Run the following commands:</p>
             <ul class="article_list">
               <li><code class="article_code">fastboot -w</code></li>
               <li><code class="article_code">fastboot flash recovery /path/to/recovery.img</code></li>
@@ -661,7 +662,7 @@ footer {
             
             <p class="article_text">NOTE: The first boot can take up to 10-15 minutes</p>
             <p class="article_text">(Optional) Download a keyboard app that supports the physical keyboard from the Apps & Tweaks article</p>
-            <p class="article_text">(Optional, Key2) Once you have finished the setup set the IME switcher shortcut to Alt + Enter in Settings -> System -> BlackBerry keyboard,</p>
+            <p class="article_text">(Optional, alpha/beta builds) Once you have finished the setup set the IME switcher shortcut to Alt + Enter in Settings -> System -> BlackBerry keyboard,</p>
             <p class="article_text">doing this makes the SYM key work properly instead of opening the keyboard switcher.</p>
           <p class="article_divider"></p>
           
@@ -686,7 +687,7 @@ footer {
             <p class="article_text">Your updating to a rom of the *same* varient, if not follow the 'Flashing LineageOS' section of the install guide.</p>
             <p class="article_text">If you need to downgrade you can do so with the recovery update method.
             <p class="article_text">NOTE: You cannot downgrade to versions under ZKrab-1.9a(Key2) or ZKrab-1.4a(Key2LE) without wiping your data because of the July 2026 security update</p>
-            <p class="article_text">If you are on v1.8a or lower and are updating to ZKrab-v1.9a or higher make sure the k2prodfix magisk module, it's changes where mergered into the rom.</p>
+            <p class="article_text">If you are on v1.8a or lower and are updating to ZKrab-v1.9a or higher make sure the k2prodfix magisk module is removed, it's changes where merged into the rom.</p>
           <p class="article_divider_small"></p>
           
           <h4 class="article_header">Updating via OTA update</h4>
@@ -694,28 +695,10 @@ footer {
             <p class="article_text">NOTE: You will get a notification when a new build get released, updating this way does not keep root</p>
             <p class="article_text">Go to Settings  -> System -> System Update</p>
             <p class="article_text">Click the 'Download' text for the latest update.</p>
-            <p class="article_text">If there are multible update you only need to install the latest one
-            <p class="article_text">Once you get a notification that the download finished press the 'Install' text</p>
+            <p class="article_text">If there are multible update you only need to install the latest one</p>
+            <p class="article_text">Once the download finishes press the 'Install' text</p>
             <p class="article_text">Reboot once the install finishes</p>
           <p class="article_divider"></p>
-            
-          <h4 class="article_header">Updating via local OTA</h4>
-            <p class="article_text">NOTE: Updating this way does not keep root</p>
-            <p class="article_text">If you have a Key2 download the latest build for your rom version</p>
-            <ul class="article_list">
-              <li class="article_text">For LOS 22.2-kernel 4.4 download the Key2 version of <a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.9a/LOS22_Key2_ZKrab-v1.9a.zip">ZKrab-v1.9a</a></li>
-              <li class="article_text">For LOS 22.2-kernel 4.19 download <a href="https://mega.nz/file/MBYX3I4J#WFQ04jrdC120pkh66xbCyKQATm7cio4sBemHieTnovQ">1.20E beta</a></li>
-              <li class="article_text">For LOS 23.2-kernel 4.19 download <a href="https://mega.nz/file/gFREDByL#L7f9MEKMTAGozB1x8XHvb6pnE924CsPirIl6OrIa_2w">2.0G alpha</a></li>
-            </ul>
-            <p class="article_text">If you have a Key2LE download build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.9a/lineage-22.2-20260725-UNOFFICIAL-zkrab-v1.9a-luna.zip">ZKrab-v1.9a (ZIP only)</a></p>
-            <p class="article_text">NOTE: You can get around MEGA's file too large popup by enabling the show desktop site option in your browser's settings</p>
-            <p class="article_text">If you have a Key2 extract the zip file you downloaded, you don't need too on a Key2LE</p>
-            <p class="article_text">Go to Settings  -> System -> System Update.</p>
-            <p class="article_text">Tap the 3 dots in the top corner and select Local update.</p>
-            <p class="article_text">NOTE: The zip file you are installing is the one *inside* of the zip file you just downloaded</p>
-            <p class="article_text">If you have a Key2 select the zip file following <code class="article_code">lineage-{lineageVersion}-{date}-UNOFFICIAL-krab-{version}-athena.zip</code> naming format.</p>
-            <p class="article_text">If you have a Key2LE select the zip file following <code class="article_code">lineage-22.2-{date}-UNOFFICIAL-{build}-luna.zip</code> naming format.</p>
-          <p class="article_divider_small"></p>
           
           <h4 class="article_header">Updating via recovery</h4>
             <p class="article_text">If you have a Key2 download the latest build for your rom variant</p>
@@ -725,10 +708,11 @@ footer {
               <li class="article_text">For LOS 23.2-kernel 4.19 download <a href="https://mega.nz/file/gFREDByL#L7f9MEKMTAGozB1x8XHvb6pnE924CsPirIl6OrIa_2w">2.0G alpha</a></li>
             </ul>
             <p class="article_text">If you have a Key2LE (Luna) download the Key2LE version of LOS22.2 build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.9a/LOS22_Key2LE_ZKrab-v1.9a.zip">ZKrab-v1.9a</a>.</p>
-            <p class="article_text">Once your rom download finishes extract it's .zip file, and enter the directory it extracted to.</p>
+            <p class="article_text">Once your rom download finishes extract the .zip file</p>
             <p class="article_text">If your phone is rooted patch the boot.img file included with the new build.</p>
             <p class="article_divider_small"></p>
             <p class="article_text">Power off you device then hold volume down and power until the bootloader menu is shown</p>
+            <p class="article_text">Open a terminal/command prompt where you extracted the zip to</p>
             <p class="article_text">Run the following commands:</p>
             <ul class="article_list">
               <li><code class="article_code">fastboot flash recovery /path/to/recovery.img</code></li>
@@ -1169,7 +1153,7 @@ footer {
           
           <h4 class="article_header">Root Tweaks</h4>
             <p class="article_text"><a href="https://github.com/nozerorma/key2-tweaks">Key2 Tweaks</a>: A small utility app to enable keyboard passcode entry, disable the nav keys when the keyboard is open and replace the built in EQ.</p>
-            <p class="article_text"><a href="https://github.com/Luna-Terra-CG/luna-terra-cg.github.io/raw/refs/heads/files/files_wumbomumbo/k2prodfix.zip">k2prodfix v2.1</a>: NOTE: Changes have been merged into ZKrab-v1.9A roms. A magisk module by wumbomumbo that lets you download BlackBerry services from the play store and make them think that they're running on an unmoddified Key2, it also adds more volume steps, hardware bluetooth A2DP offload, set swappiness to 60, and increase the max aquired buffers in SurfaceFlinger. If you have bluetooth issues after installing use <a href="https://github.com/Luna-Terra-CG/luna-terra-cg.github.io/raw/refs/heads/files/files_wumbomumbo/k2prodfixlite.zip">the lite version</a> instead.</p>
+            <p class="article_text"><a href="https://github.com/Luna-Terra-CG/luna-terra-cg.github.io/raw/refs/heads/files/files_wumbomumbo/k2prodfix.zip">k2prodfix v2.1</a>: Only use if you are on an alpha/beta rom!! A magisk module by wumbomumbo that lets you download BlackBerry services from the play store and make them think that they're running on an unmoddified Key2, it also adds more volume steps, hardware bluetooth A2DP offload, set swappiness to 60, and increase the max aquired buffers in SurfaceFlinger. If you have bluetooth issues after installing use <a href="https://github.com/Luna-Terra-CG/luna-terra-cg.github.io/raw/refs/heads/files/files_wumbomumbo/k2prodfixlite.zip">the lite version</a> instead.</p>
             <p class="article_text"><a href="https://github.com/kgr17/Key2Toolbox">Key2 Toolbox</a>: A root app that bundles a quite a few tweaks into one app, the full list is on the github repo</p>
           <p class="article_divider_small"></p>
           
