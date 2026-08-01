@@ -1,0 +1,95 @@
+/* bootleg hwbm sidebar (close arrow is broken :3c) */
+:root {
+  --sidebar-padding-top: 13px;
+  --sidebar-padding-bottom: 30px;
+  --sidebar-padding-right: 24px;
+/*   --sidebar-background: rgba(var(--base-rgb), 0.5); */
+  --sidebar-background: linear-gradient(in oklab to right, rgba(var(--surface0-rgb), 0.6) 45%, rgba(var(--base-rgb), 0.5) );
+}
+.sidebar {
+  border-top: 22px solid var(--accent-alt);
+  bottom: 15%;
+  position: absolute;
+  left: 0px;
+}
+#sidesidebar {
+  width: 50%;
+  background: radial-gradient(
+    in oklab ellipse 100% 120%,
+    rgba(var(--surface1-rgb), 0.6) 0, 
+    transparent 50%
+  );
+  height: 100%;
+  position: fixed;
+  transform: translate(-50%, 0px);
+  z-index: 12 !important;
+}
+.sidebar_items > div {
+  z-index: 12 !important;
+}
+.sidebar_items > .sidebar_seperator {
+  z-index: 13;
+  position: relative;
+}
+.sidebar_items > .sidebar_link {
+  z-index: 14;
+  position: relative;
+}
+.sidebar_items {
+  padding-top: 0px;
+  padding-left: 16px;
+  background: var(--sidebar-background);
+  backdrop-filter: blur(4px);
+  color: var(--text);
+  width: 280px;
+}
+.sidebar_link {
+  text-decoration: none;
+  color: inherit !important;
+}
+.sidebar_index, .sidebar_blog, .sidebar_wiki, .sidebar_links, .sidebar_media, .sidebar_comms {
+  margin-right: 2px;
+}
+.sidebar_index:hover, .sidebar_blog:hover, .sidebar_wiki:hover, .sidebar_links:hover, .sidebar_media:hover, .sidebar_comms:hover {
+  outline: 2px solid var(--text);
+}
+.ghost_margin {
+  height: var(--sidebar-padding-top);
+  background: transparent;
+}
+.sidebar_text {
+  margin-left: 10px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 24.5px;
+  font-weight: 450;
+  text-align: left;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+.sidebar_seperator {
+  height: 2px;
+  max-height: 2px;
+  min-height: 2px;
+  background: var(--subtext1);
+  margin-right: var(--sidebar-padding-right);
+  margin-left: 10px;
+}
+.sidebar_icon {
+  display: flex;
+  float: right;
+  height: 27px;
+  width: 27px;
+  margin-top: 13px;
+  margin-right: var(--sidebar-padding-right);
+  margin-left: 20px;
+}
+.sidebar_backarrow {
+  padding-top: var(--sidebar-padding-bottom);
+  padding-bottom: var(--sidebar-padding-bottom);
+  padding-left: 13px;
+  color: var(--text);
+  transform: translate(-16px, 0px);
+}
+.sidebar_backarrow_icon {
+  width: 38px;
+}
