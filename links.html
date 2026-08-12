@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en_NS">
-<!-- this website barely works don't bother looking at the code >.< -->
+<!--, this website barely works don't bother looking at the code >.< ,-->
 
 <head>
-    <title>Whale-come (hehe) to my bad website ;3 </title>
+    <title>This stuff is awesome. please look at some :0</title>
   <link rel="icon" type="image/x-icon" href="assets/nonbinary.ico">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="colors.css">
@@ -11,8 +11,8 @@
 <style>
 
 :root {
-  --accent: var(--flamingo) !important;
-  --accent-alt: linear-gradient(in oklab to right, var(--accent), color-mix(in oklab, var(--accent) 50%, var(--overlay2))) !important;
+  --accent: var(--yellow) !important;
+  --accent-alt: color-mix(in oklab, var(--accent) 80%, var(--overlay2)) !important;
 }
 /* basics */
 body {
@@ -25,30 +25,32 @@ p, h4, h3 {
   margin: 0px;
 }
 a:link {
-  color: var(--maroon);
+  color: var(--mauve);
 }
 a:visited {
-  color: var(--rosewater);
+  color: var(--pink);
 }
 a:hover {
-  color: var(--rosewater);
+  color: var(--pink);
 }
 a:active {
   color: var(--sky);
 }
 ::-moz-selection {
   color: var(--base);
-  background: var(--accent);
+  background: var(--accent-alt);
+  text-shadow: none !important;
 }
 ::selection {
   color: var(--base);
-  background: var(--accent);
-  background-color: var(--accent) !important;
+  background: var(--accent-alt);
+  background-color: var(--accent-alt) !important;
+  text-shadow: none !important;
 }
 
 /* background */
 .background {
-  background: linear-gradient(182deg in oklab, var(--base), color-mix(in oklab, var(--surface0) 81%, var(--accent)));
+  background: linear-gradient(165deg in oklab, color-mix(var(--base) 69%, var(--mantle) ), color-mix(var(--accent) 30%, var(--surface2)));
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -82,7 +84,6 @@ a:active {
 }
 /* abuse the sidebar css into working correctly >w< */
 .sidebar {
-  border-top: 22px solid var(--accent);
   margin-top: auto;
   width: fit-content;
   position: relative;
@@ -90,19 +91,13 @@ a:active {
   transform: translateY(-100%);
 }
 /* change active tab color */
-.sidebar_index {
+.sidebar_links {
   background: var(--accent-alt);
   color: var(--base);
   outline: 2px solid var(--accent-alt);
-  margin-right: 0px;
-  padding-right: 2px;
 }
-.sidebar_index:hover {
+.sidebar_links:hover {
   outline: 2px solid var(--accent-alt);
-}
-.ghost_margin + .sidebar_link + .sidebar_seperator {
-  background: var(--accent-alt);
-  margin: 0px;
 }
 
 /* the actual site */
@@ -116,40 +111,28 @@ a:active {
 .sidebar_flexbox {
   height: 100%;
   width: 100%;
-  padding-right: 54px;
+  padding-right: 130px;
   width: fit-content;
 }
-.info_container {
+.blog_container {
   flex-grow: 3;
   height: auto;
   width: 100%;
   display: flex;
   flex-direction: row;
 }
-.info_contents {
+.blog_contents {
   flex-grow: 3;
   background: radial-gradient(circle at bottom right, rgba(var(--surface1-rgb), 0.8), rgba(var(--surface0-rgb), 0.6), color-mix(in oklab, color-mix(in oklab, var(--base) 96%, var(--accent)) 70%, transparent) );
-  /*background: radial-gradient(circle at bottom right, color-mix(in oklab, color-mix(in oklab, var(--surface1) 90%, var(--accent)) 80%, transparent), color-mix(in oklab, color-mix(in oklab, var(--surface0) 98%, var(--accent)) 60%, transparent), color-mix(in oklab, color-mix(in oklab, var(--base) 99%, var(--accent)) 70%, transparent) );*/
   backdrop-filter: blur(4px);
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
 /* borderyy crap */
-.side_thingy {
-  width: 54px;
-  height: 100%;
-  background: linear-gradient(in oklab to bottom, rgba(var(--surface0-rgb), 0.8), rgba(var(--surface2-rgb), 0.8));
-  backdrop-filter: blur(5px);
-}
-#side_thingy_border {
-  background: linear-gradient(in oklab to bottom, rgba(var(--surface1-rgb), 0.6), rgba(var(--overlay0-rgb), 0.8));
-  width: 2px;
-  height: 100%;
-  box-shadow: -7px 0 10px var(--surface0);
-}
 #header {
-  background: rgba(var(--mantle-rgb), 0.4);
+  background: color-mix(in oklab, var(--mantle) 20%, transparent);
   width: 100%;
   height: 28px;
 }
@@ -163,8 +146,74 @@ a:active {
   text-align: left;
   margin-left: 5px;
 }
+footer {
+  color: var(--text);
+  width: 100%;
+  text-align: center;
+  background: color-mix(in oklab, var(--mantle) 30%, transparent);
+  margin-top: auto;
+  font-size: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: "Oxygen", sans-serif;
+  align-self: bottom;
+}
 
-/* name/pfp bs */
+/* buttons */
+#cool_buttons {
+  margin: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: fit-content;
+}
+.big_button {
+  line-height: 22px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  color: var(--text);
+  background: rgba(var(--surface0-rgb), 0.8);
+  padding: 8px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: row;
+}
+.big_button:hover {
+  font-weight: 700;
+  outline: 2px solid var(--accent);
+  background: rgba(var(--surface1-rgb), 0.6);
+}
+#button_spacer {
+  flex-grow: 3;
+}
+.button_arrow {
+  height: 22px;
+  min-height: 22px;
+  max-height: 22px;
+  float: right;
+  margin-right: 5px;
+}
+.sidebar_link {
+  height: fit-content;
+}
+/* main seperator thingy */
+.type {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+  margin-bottom: 4px;
+  line-height: 22px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  color: var(--text);
+}
+#seperator_lonk {
+  height: 2px;
+  background: var(--text);
+  flex-grow: 3;
+  margin-left: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
 
 </style>
@@ -232,33 +281,49 @@ a:active {
           </div>
         </div>
       </div>
-      
-      <div class="info_container">
-      
-        <div class="info_contents">
+
+      <div class="blog_container">
+
+        <div class="blog_contents">
           <div id="header">
-            <p id="header_text">index</p>
+            <p id="header_text">Links to stuff I like :3</p>
           </div>
-          
-          <div id="name">
-            <p id="pfp">Soon™</p>
-            <p id="name_1"></p>
-            <p id="name_2"></p>
-            <p id="name_border"></p>
+
+          <div class="type">
+            <p id="rants">Neat Projects</p>
+            <p id="seperator_lonk">
           </div>
-          
-          <div id="hobbies">
+
+          <div id="cool_buttons">
+
+            <a class="sidebar_link" href="  "><div class="big_button" style="margin-bottom:12px;">
+              <p>Example</p>
+              <p id="button_spacer"></p>
+              <svg class="button_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
+              </svg>
+            </div></a>
+            <a class="sidebar_link" href="  "><div class="big_button">
+              <p>Example</p>
+              <p id="button_spacer"></p>
+              <svg class="button_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
+              </svg>
+            </div></a>
+
+          </div> <!-- #cool_buttons -->
+
+          <div class="type">
+            <p id="rants">Websites</p>
+            <p id="seperator_lonk">
           </div>
-          
-          <div id="footer">
-          </div>
+
+          <footer>
+            <p>CC BY-SA 4.0 license - hosted on <a href="https://daphnis-past-midnight.neocities.org/">neocitites.org</a> &amp; <a href="https://luna-terra-cg.github.io/">github.io</a> - <a href="https://github.com/Luna-Terra-CG/luna-terra-cg.github.io.git">source code</a> - <a href="https://github.com/catppuccin/catppuccin">catppuccin colors</a></p>
+          </footer>
         </div>
-        
-        <div class="side_thingy">
-          <p id="side_thingy_border"></p>
-        </div>
-        
-      </div> <!-- .info_container -->
+
+      </div> <!-- .blog_container -->
     </div> <!-- .jank -->
   </div> <!-- #help -->
 </body>
