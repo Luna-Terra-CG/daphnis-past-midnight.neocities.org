@@ -3,7 +3,7 @@
 <!-- this website barely works don't bother looking at the code >.< -->
 
 <head>
-    <title>Whale-come (hehe) to my bad website ;3 </title>
+    <title>Whale-come (hehe) to my *very* unfinished website ;3 </title>
   <link rel="icon" type="image/x-icon" href="assets/nonbinary.ico">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="colors.css">
@@ -11,7 +11,7 @@
 <style>
 
 :root {
-  --accent: var(--flamingo) !important;
+  --accent: var(--pink) !important;
   --accent-alt: linear-gradient(in oklab to right, var(--accent), color-mix(in oklab, var(--accent) 50%, var(--overlay2))) !important;
 }
 /* basics */
@@ -93,16 +93,10 @@ a:active {
 .sidebar_index {
   background: var(--accent-alt);
   color: var(--base);
-  outline: 2px solid var(--accent-alt);
-  margin-right: 0px;
-  padding-right: 2px;
+  outline: 2px solid var(--accent);
 }
 .sidebar_index:hover {
-  outline: 2px solid var(--accent-alt);
-}
-.ghost_margin + .sidebar_link + .sidebar_seperator {
-  background: var(--accent-alt);
-  margin: 0px;
+  outline: 2px solid var(--accent);
 }
 
 /* the actual site */
@@ -129,10 +123,11 @@ a:active {
 .info_contents {
   flex-grow: 3;
   background: radial-gradient(circle at bottom right, rgba(var(--surface1-rgb), 0.8), rgba(var(--surface0-rgb), 0.6), color-mix(in oklab, color-mix(in oklab, var(--base) 96%, var(--accent)) 70%, transparent) );
-  /*background: radial-gradient(circle at bottom right, color-mix(in oklab, color-mix(in oklab, var(--surface1) 90%, var(--accent)) 80%, transparent), color-mix(in oklab, color-mix(in oklab, var(--surface0) 98%, var(--accent)) 60%, transparent), color-mix(in oklab, color-mix(in oklab, var(--base) 99%, var(--accent)) 70%, transparent) );*/
   backdrop-filter: blur(4px);
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* borderyy crap */
@@ -163,8 +158,41 @@ a:active {
   text-align: left;
   margin-left: 5px;
 }
+footer {
+  color: var(--text);
+  width: 100%;
+  text-align: center;
+  background: color-mix(in oklab, var(--mantle) 30%, transparent);
+  margin-top: auto;
+  font-size: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: "Oxygen", sans-serif;
+  align-self: bottom;
+}
 
-/* name/pfp bs */
+/* textextetxtex */
+.gp_text {
+  color: var(--text);
+  font-family: "Oxygen", sans-serif;
+  line-height: 22px;
+}
+#name, #contact, #hobbies {
+  margin-left: 12px;
+}
+#contact {
+  color: var(--text);
+  margin-top: 20px;
+  padding-inline-start: 15px;
+}
+#contact p {
+  transform: translate(-14px, 0px);
+}
+li {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  height: fit-content;
+}
 
 
 </style>
@@ -240,22 +268,36 @@ a:active {
             <p id="header_text">index</p>
           </div>
           
-          <div id="name">
-            <p id="pfp">I may be able to change web host, but I can't finish an index T~T</p>
-            <p id="name_1"></p>
-            <p id="name_2"></p>
-            <p id="name_border"></p>
+          <div id="htc">
+            <!-- this is gonna be like the htc flip clock widget *but* with page visits :3c -->
           </div>
+
+          <div id="name">
+            <p class="gp_text">(there's going to be a visit counter here that looks like the htc flip clock, so just like imagine it for now)
+            <p class="gp_text">Hello. I'm Felix Monax, this is my website.</p>
+            <p class="gp_text">I'm <a href="https://en.wikipedia.org/wiki/Non-binary">non-binary</a>, have OCD, autism and moderate depression, and am not fully verbal.</p>
+            <p class="gp_text">This site used to be hosted on neocities, but I moved so I can post my atempts at art and photography with it being fed to AI</p>
+          </div>
+
+
+          <ul id="contact">
+            <p class="gp_text">Other places you can find me:</p>
+            <li class="gp_text">Email: daphnispastmidnight@duck.com</li>
+            <li class="gp_text">Discord: <a href="https://discord.com/users/1416472651429314721">lunaterra0197</a></li>
+            <li class="gp_text">Matrix: @kelmic:matrix.org</li>
+            <li class="gp_text">XDA: <a href="https://xdaforums.com/m/luna-terra-cg.13449447/">@Luna-Terra-CG</a></li>
+            <li class="gp_text">Github: <a href="https://github.com/Luna-Terra-CG">Luna-Terra-CG</a></li>
+            <li class="gp_text">My guestbook</li>
+            <p class="gp_text">If it's not in there it's not me or I forgot about the account :)</p>
+          </ul>
           
           <div id="hobbies">
           </div>
-          
-          <div id="footer">
-          </div>
-        </div>
-        
-        <div class="side_thingy">
-          <p id="side_thingy_border"></p>
+
+          <footer>
+            <p>CC BY-SA 4.0 license - hosted on <a href="https://daphnis-past-midnight.nekoweb.org/">nekoweb.org</a> &amp; <a href="https://luna-terra-cg.github.io/">github.io</a> - <a href="https://github.com/Luna-Terra-CG/luna-terra-cg.github.io.git">source code</a> - <a href="https://github.com/catppuccin/catppuccin">catppuccin colors</a></p>
+          </footer>
+
         </div>
         
       </div> <!-- .info_container -->
