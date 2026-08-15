@@ -39,11 +39,13 @@ a:active {
 ::-moz-selection {
   color: var(--base);
   background: var(--accent);
+  text-shadow: none !important;
 }
 ::selection {
   color: var(--base);
   background: var(--accent);
   background-color: var(--accent) !important;
+  text-shadow: none !important;
 }
 
 /* background */
@@ -173,20 +175,28 @@ footer {
 
 /* textextetxtex */
 .gp_text {
-  color: var(--text);
+  word-wrap: break-word;
   font-family: "Oxygen", sans-serif;
-  line-height: 22px;
+  font-size: 16px;
+  margin-bottom: 3px;
+  font-weight: 500;
+  text-shadow: 2px 2px 10px color-mix(in oklab, var(--mantle) 70%, transparent);
+  color: var(--text);
 }
 #name, #contact, #hobbies {
   margin-left: 12px;
+}
+#hobbies {
+  padding-top: 20px;
 }
 #contact {
   color: var(--text);
   margin-top: 20px;
   padding-inline-start: 15px;
-}
-#contact p {
-  transform: translate(-14px, 0px);
+
+  p {
+    transform: translate(-14px, 0px);
+  }
 }
 li {
   margin-top: 2px;
@@ -269,30 +279,39 @@ li {
           </div>
           
           <div id="htc">
-            <!-- this is gonna be like the htc flip clock widget *but* with page visits :3c -->
+            <!-- this is gonna be where the htc flip clock is -->
           </div>
 
           <div id="name">
             <p class="gp_text">(there's going to be a visit counter here that looks like the htc flip clock, so just like imagine it for now)
-            <p class="gp_text">Hello. I'm Felix Monax, this is my website.</p>
+            <p class="gp_text">Note: this website does not use any java script!</p>
+            <p class="gp_text">Hello. I'm Felix, welcome to my website ig.</p>
             <p class="gp_text">I'm <a href="https://en.wikipedia.org/wiki/Non-binary">non-binary</a>, have OCD, autism and moderate depression, and am not fully verbal.</p>
-            <p class="gp_text">This site used to be hosted on neocities, but I moved so I can post my atempts at art and photography with it being fed to AI</p>
+            <p class="gp_text">This site used to be hosted on neocities, but I moved to nekoweb so I can post my atempts at art and photography with it being fed to AI</p>
           </div>
 
+          <div id="hobbies">
+            <p class="gp_text">Favorite teas: earl gray and irish breakfast</p>
+            <p class="gp_text">Current phone: BlackBerry Key2 (LOS 22.2), but I will be moving to a zinwa P26 when it comes out!</p>
+            <p class="gp_text">Favorite Video Games: Disco Elysium, The Drakengard/NieR series, Heaven Will Be Mine, Oneshot, MC LCE, Kingdom: Classic, pseudoregalia, atlyss, Hyper Light Drifter, Tunic, SLARPG, mutazione, Morrowind, Panzer Dragoon Orta</p>
+            <p class="gp_text">Favorite band: casopea. my favorite of their albums is PLACES</p>
+            <p class="gp_text">Favorite movie: Bionicle: The Legend Reborn</p>
+            <p class="gp_text">Favorite TV show: Twin Peaks</p>
+            <p class="gp_text">Text editor: Kate</p>
+            <p class="gp_text">Desktop Enviroment: KDE plasma, Noctalia w/ niri</p>
+            <p class="gp_text">Operating sysem: Chimera linux on my laptop, Arch linux on my desktop</p>
+          </div>
 
           <ul id="contact">
-            <p class="gp_text">Other places you can find me:</p>
+            <p class="gp_text">Where you can contact me if needed:</p>
             <li class="gp_text">Email: daphnispastmidnight@duck.com</li>
             <li class="gp_text">Discord: <a href="https://discord.com/users/1416472651429314721">lunaterra0197</a></li>
             <li class="gp_text">Matrix: @kelmic:matrix.org</li>
             <li class="gp_text">XDA: <a href="https://xdaforums.com/m/luna-terra-cg.13449447/">@Luna-Terra-CG</a></li>
             <li class="gp_text">Github: <a href="https://github.com/Luna-Terra-CG">Luna-Terra-CG</a></li>
             <li class="gp_text">My guestbook</li>
-            <p class="gp_text">If it's not in there it's not me or I forgot about the account :)</p>
+            <p class="gp_text">If it's not in there it's not me or I forgot about the account :3</p>
           </ul>
-          
-          <div id="hobbies">
-          </div>
 
           <footer>
             <p>CC BY-SA 4.0 license - hosted on <a href="https://daphnis-past-midnight.nekoweb.org/">nekoweb.org</a> &amp; <a href="https://luna-terra-cg.github.io/">github.io</a> - <a href="https://github.com/Luna-Terra-CG/luna-terra-cg.github.io.git">source code</a> - <a href="https://github.com/catppuccin/catppuccin">catppuccin colors</a></p>
