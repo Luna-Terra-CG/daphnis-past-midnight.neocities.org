@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en_NS">
-<!--, this website barely works don't bother looking at the code >.< ,-->
+<!--, this is the one page with ok css, feel free to have a look at it ,-->
 
 <head>
-    <title>the blog of blogy mc bloggerson the third of his name, the most mentally unstable creature on neocities</title>
+    <title>the blog of blogy mc bloggerson the third of his name, possibly the most mentally unstable creature on nekoweb</title>
   <link rel="icon" type="image/x-icon" href="assets/nonbinary.ico">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="colors.css">
@@ -238,6 +238,26 @@ footer {
   margin-bottom: auto;
 }
 
+/* content warning */
+#cw-sh {
+   display: none;
+
+  ~ .cw_label > .big_button > #cw_text::after {
+    content: 'Press to hide posts with sensitive content';
+    visibility: visible;
+  }
+}
+#cw-sh:not(:checked){
+  ~ .cw-sh_articles {
+    display: none;
+  }
+  ~ .cw_label > .big_button > #cw_text::after {
+    content: 'Press to show posts with sensitive content';
+    visibility: visible;
+  }
+}
+
+
 
 </style>
 </head>
@@ -345,16 +365,38 @@ footer {
           <div id="cool_buttons">
 
             <div class="micro">
+              <p class="postDate">17/8/2026</p>
+              <p class="postText">I'm going to start cutting down on the amount of time i spend on the internet, it's starting to really freak me out just how much of my personal info is being harvested because i use it.</p>
+            </div>
+
+            <div class="micro" style="margin-bottom:0px;">
               <p class="postDate">14/8/2026</p>
               <p class="postText">Got iCloud email working on BB10, you have to use StartTLS or it errors out after loading for like 10 minutes</p>
             </div>
 
-            <div class="micro" style="margin-bottom:0px;">
-              <p class="postDate">12/8/2026</p>
-              <p class="postText">I got 2 full days without cutting myself. (wow much impressive)</p>
-            </div>
-
           </div> <!-- #cool_buttons -->
+
+          <div class="type">
+            <p id="rants">Microbloggening - CW: Self-Harm, Mental illness</p>
+            <p id="seperator_lonk">
+          </div>
+
+          <input type="checkbox" id="cw-sh" name="cw-sh">
+            <label for="cw-sh" class="cw_label">
+              <div class="big_button" style="margin:12px;margin-top:0px;">
+                <p style="visibility: visible;" id="cw_text"></p>
+                <p id="button_spacer"></p>
+              </div>
+            </label>
+
+            <div class="cw-sh_articles" id="cool_buttons">
+
+              <div class="micro" style="margin-bottom:0px;">
+                <p class="postDate">12/8/2026</p>
+                <p class="postText">I got 2 full days without cutting myself. (wow much impressive)</p>
+              </div>
+
+            </div> <!-- #cool_buttons -->
           
           <footer>
             <p>CC BY-SA 4.0 license - hosted on <a href="https://daphnis-past-midnight.neocities.org/blog">neocitites.org</a> &amp; <a href="https://luna-terra-cg.github.io/blog">github.io</a> - <a href="https://github.com/Luna-Terra-CG/luna-terra-cg.github.io.git">source code</a> - <a href="https://github.com/catppuccin/catppuccin">catppuccin colors</a></p>
