@@ -184,7 +184,7 @@ a:active {
   margin-left: 18px;
 }
 
-/* article info */
+/* open/close articles */
 #article_integritySpoofing{display:none}
 #article_integritySpoofing:not(:checked) + #article_integritySpoofing_contents {
   display: none;
@@ -213,6 +213,7 @@ a:active {
 #article_key2_a8:not(:checked) + #article_key2_a8_contents {
   display: none;
 }
+/* gnereal stuff */
 .article_title {
   color: var(--text);
   width: auto;
@@ -278,32 +279,6 @@ a:active {
   padding-right: 2px;
   font-family: "IBM Plex Sans", sans-serif;
 }
-/* changelog stuff */
-.article_section {
-  display: flex;
-  flex-direction: row;
-  margin-right: var(--article-padding);
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-.article_section_left, .article_section_right {
-  background: var(--text);
-  height: 2px;
-  width: 100%;
-}
-.article_section_text {
-  color: var(--text);
-  text-transform: uppercase;
-  font-size: 15px;
-  overflow: visible;
-  white-space: nowrap;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-family: "IBM Plex Sans", sans-serif;
-}
-
 .article_list {
   margin: 2px;
   margin-top: 0px;
@@ -326,10 +301,12 @@ li {
 .article_divider {
   background: transparent;
   height: 10px;
+  min-height: 10px;
 }
 .article_divider_small {
   background: transparent;
   height: 3px;
+  min-height: 3px;
 }
 pre {
   width:auto;
@@ -347,6 +324,127 @@ footer {
   padding-top: 2px;
   padding-bottom: 2px;
   font-family: "Oxygen", sans-serif
+}
+/* changelog stuff */
+.changelog_divider {
+  display: flex;
+  flex-direction: row;
+/*   margin-right: var(--article-padding); */
+  align-items: center;
+  justify-content: center;
+}
+.changelog_divider_line, .changelog_divider_line {
+  background: var(--text);
+  height: 2px;
+  flex-grow: 3;
+}
+.changelog_divider_text {
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 15px;
+  overflow: visible;
+  white-space: nowrap;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.changelog_arrow {
+  height: 20px;
+}
+#k2-16-419 {
+   display: none;
+
+  + .changelog_divider > .changelog_arrow {
+    rotate: 270deg;
+    padding-left: 12px;
+    transform: translate(-5px, 2px);
+  }
+}
+#k2-16-419:not(:checked) {
+  ~ #k2-16-419_changelog {
+    display: none;
+  }
+  + .changelog_divider > .changelog_arrow {
+    rotate: 90deg;
+    padding-left: 12px;
+    transform: translate(-5px, -2px);
+  }
+}
+#k2-15-419 {
+   display: none;
+
+  + .changelog_divider > .changelog_arrow {
+    rotate: 270deg;
+    padding-left: 12px;
+    transform: translate(-5px, 2px);
+  }
+}
+#k2-15-419:not(:checked) {
+  ~ #k2-15-419_changelog {
+    display: none;
+  }
+  + .changelog_divider > .changelog_arrow {
+    rotate: 90deg;
+    padding-left: 12px;
+    transform: translate(-5px, -2px);
+  }
+}
+#k2-15-44 {
+   display: none;
+
+  + .changelog_divider > .changelog_arrow {
+    rotate: 270deg;
+    padding-left: 12px;
+    transform: translate(-5px, 2px);
+  }
+}
+#k2-15-44:not(:checked) {
+  ~ #k2-15-44_changelog {
+    display: none;
+  }
+  + .changelog_divider > .changelog_arrow {
+    rotate: 90deg;
+    padding-left: 12px;
+    transform: translate(-5px, -2px);
+  }
+}
+#le-15-419 {
+   display: none;
+
+  + .changelog_divider > .changelog_arrow {
+    rotate: 270deg;
+    padding-left: 12px;
+    transform: translate(-5px, 2px);
+  }
+}
+#le-15-419:not(:checked) {
+  ~ #le-15-419_changelog {
+    display: none;
+  }
+  + .changelog_divider > .changelog_arrow {
+    rotate: 90deg;
+    padding-left: 12px;
+    transform: translate(-5px, -2px);
+  }
+}
+#le-15-44 {
+   display: none;
+
+  + .changelog_divider > .changelog_arrow {
+    rotate: 270deg;
+    padding-left: 12px;
+    transform: translate(-5px, 2px);
+  }
+}
+#le-15-44:not(:checked) {
+  ~ #le-15-44_changelog {
+    display: none;
+  }
+  + .changelog_divider > .changelog_arrow {
+    rotate: 90deg;
+    padding-left: 12px;
+    transform: translate(-5px, -2px);
+  }
 }
 
 </style>
@@ -449,11 +547,9 @@ footer {
 
               <h4 class="article_header">What is the difference between the rom variants?</h4>
                 <p class="article_text">LOS 22.2-Kernel 4.4 is the most stable version, and is almost at parody with stock in terms of features, but the worst performance.</p>
-                <p class="article_text">Note: Development of LOS 23.2-kernel 4.19 was abandoned by krab-ubica in may, don't use it</p>
-                <p class="article_text">LOS 23.2-Kernel 4.19 has the latest android version and slightly better performance but is not being worked on, much more buggy and is missing features. GPU performance and battery can be much worse because of how much heavier android 16 is.</p>
-                <p class="article_text">LOS 22.2-Kernel 4.19 has the newer kernel from LineageOS 23.2 meaning you get the significant performance and battery improvements from it's kernel without the heavier android version, it will replace LOS 22.2-kernel 4.4 as the stable version at some point.</p>
-                <p class="article_divider_small"></p>
-                <p class="article_text">The Key2LE's android 15 port is based on the Key2's LOS 22.2-kernel 4.4 variant, but it will move to LOS 22.2-kernel 4.19</p>
+                <p class="article_text">Note: LOS 23.2-Kernel 4.19 isn't available on the Key2LE</p>
+                <p class="article_text">LOS 23.2-Kernel 4.19 has the latest android version and slightly better performance but is much more buggy and is missing features. GPU performance and battery can be much worse because of how much heavier android 16 is.</p>
+                <p class="article_text">LOS 22.2-Kernel 4.19 has the newer kernel from LineageOS 23.2 meaning you get the *significant* performance and battery improvements from it's kernel without the heavier android version, it will replace LOS 22.2-kernel 4.4 as the stable version soon.</p>
               <p class="article_divider_small"></p>
 
               <h4 class="article_header">Is performance better than android 8.1?</h4>
@@ -462,7 +558,7 @@ footer {
               <p class="article_divider_small"></p>
 
               <h4 class="article_header">Will I get timely security updates?</h4>
-                <p class="article_text">On ZKrab roms you will get them within a week. On kernel 4.19 roms you'll get them when ever Krab-Ubica feels like adding them.</p>
+                <p class="article_text">On ZKrab roms you will get them within a week. On the Key2's kernel 4.19 roms you'll get them when ever Krab-Ubica feels like adding them.</p>
               <p class="article_divider_small"></p>
 
               <h4 class="article_header">How long does the install take?</h4>
@@ -531,7 +627,7 @@ footer {
               <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
             </svg>
             <h3 class="article_name">Install Guide for LineageOS UNOFFICIAL</h3>
-            <p class="article_date"><var class="article-date-var">Last editied:</var> 20 Aug 2026</p>
+            <p class="article_date"><var class="article-date-var">Last editied:</var> 21 Aug 2026</p>
           </label>
           <input type="checkbox" id="article_krab" name="article_krab">
             <div class="article_contents" id="article_krab_contents">
@@ -590,11 +686,14 @@ footer {
                 <p class="article_text">Note: If are going to put your sim card in it or aren't sure which variant you want, use LOS 22.2-kernel 4.4</p>
                 <p class="article_text">If you have a Key2 (Athena) download the latest build of your preferred rom variant</p>
                 <ul class="article_list">
-                  <li class="article_text">For LOS 22.2-kernel 4.4 download the Key2 version of <a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.10a/LOS22_Key2_ZKrab-v1.10a.zip">ZKrab-v1.10a</a></li>
-                  <li class="article_text">For LOS 22.2-kernel 4.19 download <a href="https://mega.nz/file/NdYSRJqJ#HQu0UK4mnnWkeUzrBrmWyHPkU9CHne09oEVUvmergyg">1.20G beta</a></li>
-                  <li class="article_text">For LOS 23.2-kernel 4.19 download <a href="https://mega.nz/file/gFREDByL#L7f9MEKMTAGozB1x8XHvb6pnE924CsPirIl6OrIa_2w">2.0G alpha</a></li>
+                  <li class="article_text">For LOS 22.2-kernel 4.4 download the Key2 version of build <a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.10a/LOS22_Key2_ZKrab-v1.10a.zip">ZKrab-v1.10a</a></li>
+                  <li class="article_text">For LOS 22.2-kernel 4.19 download build <a href="https://mega.nz/file/NdYSRJqJ#HQu0UK4mnnWkeUzrBrmWyHPkU9CHne09oEVUvmergyg">1.20G beta</a></li>
+                  <li class="article_text">For LOS 23.2-kernel 4.19 download build <a href="https://mega.nz/file/gFREDByL#L7f9MEKMTAGozB1x8XHvb6pnE924CsPirIl6OrIa_2w">2.0G alpha</a></li>
                 </ul>
-                <p class="article_text">If you have a Key2LE (Luna) download the Key2LE version of LOS22.2 build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.10a/LOS22_Key2LE_ZKrab-v1.10a.zip">ZKrab-v1.10a</a>.</p>
+                <p class="article_text">If you have a Key2LE (Luna) download the latest build of your perferred rom variant</p>
+                  <li class="article_text">For LOS 22.2-kernel 4.4 download the Key2LE version of build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.10a/LOS22_Key2LE_ZKrab-v1.10a.zip">ZKrab-v1.10a</a></li>
+                  <li class="article_text">For LOS 22.2-kernel 4.19 download build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.20a/LOS22_Key2LE_ZKrab-v1.20a.zip">ZKrab-1.20a beta</a></li>
+                </ul>
                 <p class="article_text">Once your rom download finishes extract the .zip file</p>
                 <p class="article_text">Gapps (Google Services) is not included in the rom, if you want them you will need to download it seperately.</p>
                 <p class="article_text">The recommended gapps package for LineageOS 22 is <a href="https://github.com/MindTheGapps/15.0.0-arm64/releases/latest">MindTheGapps 15</a>, and <a href="https://github.com/MindTheGapps/16.0.0-arm64/releases/latest">MindTheGapps 16</a> for LineageOS 23.</p>
@@ -640,7 +739,7 @@ footer {
               <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
             </svg>
             <h3 class="article_name">Updating to a newer LineageOS UNOFFICIAL build</h3>
-            <p class="article_date"><var class="article-date-var">Last editied:</var> 20 Aug 2026</p>
+            <p class="article_date"><var class="article-date-var">Last editied:</var> 21 Aug 2026</p>
           </label>
           <input type="checkbox" id="article_krab_update" name="article_krab_update">
             <div class="article_contents" id="article_krab_update_contents">
@@ -649,11 +748,19 @@ footer {
               <h4 class="article_header">Requirements</h4>
                 <p class="article_text">You have ADB and fastboot installed</p>
                 <p class="article_text">Note: You cannot update from builds below v1.1B(Key2) or 20260606(Key2LE) without wiping you data because of encryption changes.</p>
-                <p class="article_text">Your updating to a rom of the *same* varient, if not follow the 'Flashing LineageOS' section of the install guide.</p>
-                <p class="article_text">If you need to downgrade you can do so with the recovery update method.
-                <p class="article_text">Note: You cannot downgrade to versions under ZKrab-1.9a(Key2) or ZKrab-1.4a(Key2LE) without wiping your data because of the July 2026 security update</p>
-                <p class="article_text">If you are on v1.8a or lower and are updating to ZKrab-v1.9a or higher make sure the k2prodfix magisk module is removed, it's changes where merged into the rom.</p>
+                <p class="article_text">(KEY2LE - kernel 4.19) Your updating to a build with a 4.19 kernel, if not follow the 'Flashing LineageOS' section of the install guide.</p>
+                <p class="article_text">(KEY2 NOT LE) Your updating to a rom of the *same* variant, if not follow the 'Flashing LineageOS' section of the install guide.</p>
               <p class="article_divider_small"></p>
+
+              <h4 class="article_header">Notes</h4>
+                <p class="article_text">The Key2LE roms support updating from LOS 22.2-kernel 4.4 to LOS 22.2-kernel 4.19 without wiping your data!</p>
+                <p class="article_text">If you need to downgrade you can do so with the recovery update method.
+                <p class="article_text">On LOS22.2-kernel 4.4 you cannot downgrade to versions under ZKrab-1.9a(Key2) or ZKrab-1.4a(Key2LE) without wiping your data because of the July 2026 security</p>
+                <p class="article_text">If you are on LOS22.2-kernel 4.4 and on v1.8a or lower when updating to ZKrab-v1.9a or higher make sure the k2prodfix magisk module is removed, it's changes have been merged into the rom.</p>
+                <p class="article_text">Updating to Key2LE - Kernel 4.19:
+                <p class="article_text"><var class="article_header">If you are using adoptable/internal SD storage on kernel 4.4 ROM</var>: Before updating to v1.20a+, migrate/backup all apps/files from the SD card, format the SD card as normal/portable storage, then repeat formatting as adoptable/internal storage after updating to v1.20a+
+                <p class="article_text">Default ZRAM compression changed to Zstd in kernel, but if you had previously forced a compression algorithm with persist.vendor.key2.zram.compressor, that override will persist. It is recommended to switch to Zstd - see bottom of this page: <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/tag/v1.20a">https://github.com/Lineage-BBKey2LE/distribution/releases/tag/v1.20a</a></p>
+              <p class="article_divider"></p>
 
               <h4 class="article_header">Updating via OTA update</h4>
                 <p class="article_text">Only LOS 22.2-Kernel 4.4 builds above v1.8a(Key2) and 20260602(Key2LE) support OTA updates!!!</p>
@@ -668,11 +775,15 @@ footer {
               <h4 class="article_header">Updating via recovery</h4>
                 <p class="article_text">If you have a Key2 download the latest build for your rom variant</p>
                 <ul class="article_list">
-                  <li class="article_text">For LOS 22.2-kernel 4.4 download the Key2 version of <a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.10a/LOS22_Key2_ZKrab-v1.10a.zip">ZKrab-v1.10a</a></li>
-                  <li class="article_text">For LOS 22.2-kernel 4.19 download <a href="https://mega.nz/file/NdYSRJqJ#HQu0UK4mnnWkeUzrBrmWyHPkU9CHne09oEVUvmergyg">1.20G beta</a></li>
-                  <li class="article_text">For LOS 23.2-kernel 4.19 download <a href="https://mega.nz/file/gFREDByL#L7f9MEKMTAGozB1x8XHvb6pnE924CsPirIl6OrIa_2w">2.0G alpha</a></li>
+                  <li class="article_text">For LOS 22.2-kernel 4.4 download the Key2 version of build <a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.10a/LOS22_Key2_ZKrab-v1.10a.zip">ZKrab-v1.10a</a></li>
+                  <li class="article_text">For LOS 22.2-kernel 4.19 download build <a href="https://mega.nz/file/NdYSRJqJ#HQu0UK4mnnWkeUzrBrmWyHPkU9CHne09oEVUvmergyg">1.20G beta</a></li>
+                  <li class="article_text">For LOS 23.2-kernel 4.19 download build <a href="https://mega.nz/file/gFREDByL#L7f9MEKMTAGozB1x8XHvb6pnE924CsPirIl6OrIa_2w">2.0G alpha</a></li>
                 </ul>
-                <p class="article_text">If you have a Key2LE (Luna) download the Key2LE version of LOS22.2 build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.10a/LOS22_Key2LE_ZKrab-v1.10a.zip">ZKrab-v1.10a</a>.</p>
+                <p class="article_text">If you have a Key2LE (Luna) download the latest build of your rom variant</p>
+                <ul class="article_list">
+                  <li class="article_text">For LOS 22.2-kernel 4.4 download the Key2LE version of build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.10a/LOS22_Key2LE_ZKrab-v1.10a.zip">ZKrab-v1.10a</a></li>
+                  <li class="article_text">For LOS 22.2-kernel 4.19 download build <a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.20a/LOS22_Key2LE_ZKrab-v1.20a.zip">ZKrab-1.20a beta</a></li>
+                </ul>
                 <p class="article_text">Once your rom download finishes extract the .zip file</p>
                 <p class="article_text">If your phone is rooted patch the boot.img file included with the new build.</p>
                 <p class="article_divider_small"></p>
@@ -703,424 +814,479 @@ footer {
               <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
             </svg>
             <h3 class="article_name">LineageOS UNOFFICIAL changelog</h3>
-            <p class="article_date"><var class="article-date-var">LOS 22.2 + K4.4:</var> ZKrab-v1.10a <var class="article-date-var">LOS 22.2 + K4.19:</var> 1.20G <var class="article-date-var">LOS 23.2:</var> 2.0G</p>
+            <p class="article_date"><var class="article-date-var">LOS 22.2 + K4.4:</var> ZKrab-v1.10a <var class="article-date-var">LOS 22.2 + K4.19:</var> 1.20G/ZKrab-1.20a <var class="article-date-var">LOS 23.2:</var> 2.0G</p>
           </label>
           <input type="checkbox" id="article_key2_changelog" name="article_key2_changelog">
             <div class="article_contents" id="article_key2_changelog_contents">
               <p class="article_divider"></p>
 
-              <div class="article_section" style="margin:0px!important;">
-                <p class="article_section_left"></p>
-                <p class="article_section_text">Key2: LOS 23.2-Kernel 4.19</p>
-                <p class="article_section_right"></p>
-              </div>
-              <p class="article_divider_small"></p>
-              <div style="display:flex;flex-direction:row;">
-                <div>
-                  <h4 class="article_header">Tested:</h4>
-                  <ul class="article_list">
-                    <li class="article_text">Boots to OS: OK</li>
-                    <li class="article_text">Screen+touch: OK</li>
-                    <li class="article_text">USB + adb: OK</li>
-                    <li class="article_text">Wi-Fi: OK</li>
-                    <li class="article_text">Sound: OK</li>
-                    <li class="article_text">Bluetooth: OK</li>
-                    <li class="article_text">Encryption: OK</li>
-                    <li class="article_text">Keyboard: OK</li>
-                    <li class="article_text">Voice calls: OK</li>
-                    <li class="article_text">Camera: OK</li>
-                    <li class="article_text">Keyboard-backlight: OK</li>
-                    <li class="article_text">Keyboard-touch: OK</li>
-                    <li class="article_text">Mobile-hotspot: OK</li>
-                    <li class="article_text">Notificaiton led: OK</li>
-                    <li class="article_text">Fingerprint: OK</li>
-                    <li class="article_text">LTE: OK</li>
-                    <li class="article_text">NFC: OK</li>
-                    <li class="article_text">VOIP: OK</li>
-                    <li class="article_text">HDR+ OR GCAM88: OK</li>
-                    <li class="article_text">WIRED HEADSET: TESTING</li>
-                    <li class="article_text">Haptics/Vibro: TESTING</li>
-                  </ul>
-                  </div>
+              <input type="checkbox" id="k2-16-419" name="k2-16-419">
+              <label for="k2-16-419" class="changelog_divider">
+                <p class="changelog_divider_line" style="flex-grow:0;width:20px;"></p>
+                <p class="changelog_divider_text">Key2: LineageOS 23.2 + Kernel 4.19</p>
+                <p class="changelog_divider_line"></p>
+                <svg class="changelog_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
+                </svg>
+              </label>
+
+              <div id="k2-16-419_changelog">
+                <p class="article_divider_small"></p>
+                <div style="display:flex;flex-direction:row;">
                   <div>
-                    <h4 class="article_header">Recheck:</h4>
+                    <h4 class="article_header">Tested:</h4>
                     <ul class="article_list">
-                      <li class="article_text">First shot FP/USB ignored at deep-sleep;</li>
-                      <li class="article_text">Slow wake-up after deep-sleep;</li>
+                      <li class="article_text">Boots to OS: OK</li>
+                      <li class="article_text">Screen+touch: OK</li>
+                      <li class="article_text">USB + adb: OK</li>
+                      <li class="article_text">Wi-Fi: OK</li>
+                      <li class="article_text">Sound: OK</li>
+                      <li class="article_text">Bluetooth: OK</li>
+                      <li class="article_text">Encryption: OK</li>
+                      <li class="article_text">Keyboard: OK</li>
+                      <li class="article_text">Voice calls: OK</li>
+                      <li class="article_text">Camera: OK</li>
+                      <li class="article_text">Keyboard-backlight: OK</li>
+                      <li class="article_text">Keyboard-touch: OK</li>
+                      <li class="article_text">Mobile-hotspot: OK</li>
+                      <li class="article_text">Notificaiton led: OK</li>
+                      <li class="article_text">Fingerprint: OK</li>
+                      <li class="article_text">LTE: OK</li>
+                      <li class="article_text">NFC: OK</li>
+                      <li class="article_text">VOIP: OK</li>
+                      <li class="article_text">HDR+ OR GCAM88: OK</li>
+                      <li class="article_text">WIRED HEADSET: TESTING</li>
+                      <li class="article_text">Haptics/Vibro: TESTING</li>
                     </ul>
-                    <p class="article_divider_small"></p>
-                    <h4 class="article_header">Known bugs:</h4>
-                    <ul class="article_list">
-                      <li class="article_text">(minor) Yellow flashlight-torch</li>
-                      <li class="article_text">(minor) Haptic/vibro is not accurate on volume and brightness change</li>
-                      <li class="article_text">(medium) Haptic/vibro is less powerfull;</li>
-                    </ul>
-                    <h4 class="article_header">Todo:</h4>
-                    <ul class="article_list">
-                      <li class="article_text">Good solution for Synaptics LCD colors/saturation</li>
-                      <li class="article_text">NFC driver/hal upgrade</li>
-                      <li class="article_text">Haptic driver to led upgrade</li>
-                    </ul>
-                    <p class="article_divider_small"></p>
-                    <h4 class="article_header">Investigation:</h4>
-                    <ul class="article_list">
-                      <li class="article_text">USB-C storage device not detected during Lineage setup/Seedvault restore (was detected on LOS 22.2)</li>
-                      <li class="article_text">Slight UI app-transition freezez;</li>
-                      <li class="article_text">BT/VOIP after voip-call music volume lowers;</li>
-                    </ul>
+                    </div>
+                    <div>
+                      <h4 class="article_header">Recheck:</h4>
+                      <ul class="article_list">
+                        <li class="article_text">First shot FP/USB ignored at deep-sleep;</li>
+                        <li class="article_text">Slow wake-up after deep-sleep;</li>
+                      </ul>
+                      <p class="article_divider_small"></p>
+                      <h4 class="article_header">Known bugs:</h4>
+                      <ul class="article_list">
+                        <li class="article_text">(minor) Yellow flashlight-torch</li>
+                        <li class="article_text">(minor) Haptic/vibro is not accurate on volume and brightness change</li>
+                        <li class="article_text">(medium) Haptic/vibro is less powerfull;</li>
+                      </ul>
+                      <h4 class="article_header">Todo:</h4>
+                      <ul class="article_list">
+                        <li class="article_text">Good solution for Synaptics LCD colors/saturation</li>
+                        <li class="article_text">NFC driver/hal upgrade</li>
+                        <li class="article_text">Haptic driver to led upgrade</li>
+                      </ul>
+                      <p class="article_divider_small"></p>
+                      <h4 class="article_header">Investigation:</h4>
+                      <ul class="article_list">
+                        <li class="article_text">USB-C storage device not detected during Lineage setup/Seedvault restore (was detected on LOS 22.2)</li>
+                        <li class="article_text">Slight UI app-transition freezez;</li>
+                        <li class="article_text">BT/VOIP after voip-call music volume lowers;</li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              <p class="article_divider_small"></p>
+                <p class="article_divider_small"></p>
 
-              <h4 class="article_header"><a href="https://mega.nz/file/gFREDByL#L7f9MEKMTAGozB1x8XHvb6pnE924CsPirIl6OrIa_2w">2.0G 21 May 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">FIXED: BT-sound lags upon device unlock (every time after going into deep-sleep for the first time)</p>
-                <p class="article_text">FIXED: Nav-buttons backlight turn-off on good-light conditions</p>
-              <p class="article_divider_small"></p>
+                <h4 class="article_header"><a href="https://mega.nz/file/gFREDByL#L7f9MEKMTAGozB1x8XHvb6pnE924CsPirIl6OrIa_2w">2.0G 21 May 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">FIXED: BT-sound lags upon device unlock (every time after going into deep-sleep for the first time)</p>
+                  <p class="article_text">FIXED: Nav-buttons backlight turn-off on good-light conditions</p>
+                <p class="article_divider_small"></p>
 
-              <h4 class="article_header"><a href="https://mega.nz/file/dFRHjB5K#0UGDzY6eADtvdTaadqhJ3NGuAsbO0ATABJHD1SOYxI0">2.0F 19 May 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">Fixed: Convenience key</p>
-                <p class="article_text">Fixed: Wi-Fi disabled upon device sleep</p>
-                <p class="article_text">Fixed: Low-latency pin entering on unlocking</p>
-                <p class="article_text">Fixed: Slow LCD enabling after sleep</p>
-              <p class="article_divider_small"></p>
+                <h4 class="article_header"><a href="https://mega.nz/file/dFRHjB5K#0UGDzY6eADtvdTaadqhJ3NGuAsbO0ATABJHD1SOYxI0">2.0F 19 May 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">Fixed: Convenience key</p>
+                  <p class="article_text">Fixed: Wi-Fi disabled upon device sleep</p>
+                  <p class="article_text">Fixed: Low-latency pin entering on unlocking</p>
+                  <p class="article_text">Fixed: Slow LCD enabling after sleep</p>
+                <p class="article_divider_small"></p>
 
-              <h4 class="article_header"><a href="https://mega.nz/file/VZgxCYwC#AwB6wFvo0EheuA711dARDTjlpBbv1CIVd5OsRlPH0mc">2.0E 04 May 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">Fixed: Device hang on blackberry screen upon reboot (sometimes)</p>
-                <p class="article_text">Low performance and lags after wake from sleep</p>
-                <p class="article_text">TRY-FIX: Gcam88 camera hangs-up device under load</p>
-                <p class="article_text">TRY-FIX: BT-sound lags under cpu pressure</p>
-                <p class="article_text">Haptics/Vibro more precise (but not as accurate as needed)</p>
-                <p class="article_text">Performance and memory tunings</p>
-              <p class="article_divider_small"></p>
+                <h4 class="article_header"><a href="https://mega.nz/file/VZgxCYwC#AwB6wFvo0EheuA711dARDTjlpBbv1CIVd5OsRlPH0mc">2.0E 04 May 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">Fixed: Device hang on blackberry screen upon reboot (sometimes)</p>
+                  <p class="article_text">Low performance and lags after wake from sleep</p>
+                  <p class="article_text">TRY-FIX: Gcam88 camera hangs-up device under load</p>
+                  <p class="article_text">TRY-FIX: BT-sound lags under cpu pressure</p>
+                  <p class="article_text">Haptics/Vibro more precise (but not as accurate as needed)</p>
+                  <p class="article_text">Performance and memory tunings</p>
+                <p class="article_divider_small"></p>
 
-              <h4 class="article_header"><a href="https://mega.nz/file/MZYUGa5K#RrbGgfkAkxTApB4wSr1xB2li1DW03GOiMLfdpRQ_k-8">2.0D 30 Apr 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">Fixed. K12KB: Back-button not work in text inputs</p>
-                <p class="article_text">Voip better</p>
-                <p class="article_text">ired head-set sound fixed</p>
-                <p class="article_text">Fixed: Virtual nav-buttons settings toggle</p>
-                <p class="article_text">TRY-FIX: Gcam88 preview freeze on some boots</p>
-                <p class="article_text">Fixed: Keyboard-press was waking device</p>
-                <p class="article_text">Led breathing and setting fixed</p>
-                <p class="article_text">Keyboard backlight timeouts controlled both with nav-btns</p>
-                <p class="article_text">Swappiness 60-&gt;100 (better swap-&gt;zram usage)</p>
-                <p class="article_text">Low-light adaptive brightness flickering fixed</p>
-                <p class="article_text">NFC better</p>
-              <p class="article_divider_small"></p>
+                <h4 class="article_header"><a href="https://mega.nz/file/MZYUGa5K#RrbGgfkAkxTApB4wSr1xB2li1DW03GOiMLfdpRQ_k-8">2.0D 30 Apr 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">Fixed. K12KB: Back-button not work in text inputs</p>
+                  <p class="article_text">Voip better</p>
+                  <p class="article_text">ired head-set sound fixed</p>
+                  <p class="article_text">Fixed: Virtual nav-buttons settings toggle</p>
+                  <p class="article_text">TRY-FIX: Gcam88 preview freeze on some boots</p>
+                  <p class="article_text">Fixed: Keyboard-press was waking device</p>
+                  <p class="article_text">Led breathing and setting fixed</p>
+                  <p class="article_text">Keyboard backlight timeouts controlled both with nav-btns</p>
+                  <p class="article_text">Swappiness 60-&gt;100 (better swap-&gt;zram usage)</p>
+                  <p class="article_text">Low-light adaptive brightness flickering fixed</p>
+                  <p class="article_text">NFC better</p>
+                <p class="article_divider_small"></p>
 
-              <h4 class="article_header"><a href="https://mega.nz/file/MIYlFBJQ#g2QyoiS2Axeqh3dWezCdv5Y7w8uxRGoz8JVeTPVm2Jg">2.0C 25 Apr 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">USB-OTG and MMC-flashes, including exFAT, NTFS</p>
-                <p class="article_text">Recovery activated restore "choose from disk"</p>
-                <p class="article_text">USB mode changes via preferences unlocked</p>
-                <p class="article_text">Camera fixed (was broken by selinux)</p>
-                <p class="article_text">Fingerprint better</p>
-                <p class="article_text">GPS better</p>
-                <p class="article_text">Darkening GUI-colors on Synaptics LCD temporary hacky fix</p>
-                <p class="article_text">VOIP better</p>
-                <p class="article_text">Laggy wakeups/Deep sleep better</p>
-                <p class="article_text">Shed/CPU freq scaling better tnx @Wumbomumbo</p>
-                <p class="article_text">Keyboard-backlight from LOS22-krab-v1.8 tnx @Sadako</p>
-              <p class="article_divider_small"></p>
+                <h4 class="article_header"><a href="https://mega.nz/file/MIYlFBJQ#g2QyoiS2Axeqh3dWezCdv5Y7w8uxRGoz8JVeTPVm2Jg">2.0C 25 Apr 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">USB-OTG and MMC-flashes, including exFAT, NTFS</p>
+                  <p class="article_text">Recovery activated restore "choose from disk"</p>
+                  <p class="article_text">USB mode changes via preferences unlocked</p>
+                  <p class="article_text">Camera fixed (was broken by selinux)</p>
+                  <p class="article_text">Fingerprint better</p>
+                  <p class="article_text">GPS better</p>
+                  <p class="article_text">Darkening GUI-colors on Synaptics LCD temporary hacky fix</p>
+                  <p class="article_text">VOIP better</p>
+                  <p class="article_text">Laggy wakeups/Deep sleep better</p>
+                  <p class="article_text">Shed/CPU freq scaling better tnx @Wumbomumbo</p>
+                  <p class="article_text">Keyboard-backlight from LOS22-krab-v1.8 tnx @Sadako</p>
+                <p class="article_divider_small"></p>
 
-              <h4 class="article_header"><a href="https://mega.nz/file/1cBkWZaJ#3_I28jpJnXDroiMhuS43YLaih77OhIUUDO4XqVQi3U4">2.0B 17 Apr 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">recovery adb sideload fixed</p>
-                <p class="article_text">Unlocking performance issue fixed</p>
-                <p class="article_text">Selinux: enforced</p>
-              <p class="article_divider_small"></p>
+                <h4 class="article_header"><a href="https://mega.nz/file/1cBkWZaJ#3_I28jpJnXDroiMhuS43YLaih77OhIUUDO4XqVQi3U4">2.0B 17 Apr 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">recovery adb sideload fixed</p>
+                  <p class="article_text">Unlocking performance issue fixed</p>
+                  <p class="article_text">Selinux: enforced</p>
+                <p class="article_divider_small"></p>
 
-              <h4 class="article_header"><a href="https://mega.nz/file/EBgAGaCQ#RDR0G-Pd7szDlk-7Ix3JzIFR12mv_fmIrvx1d3QlJ1U">2.0A 16 Apr 2026 PUBLIC ALPHA</a></h4>
-              <p class="article_text">Android 16 and kernel 4.19</p>
-              <p class="article_divider_small"></p>
+                <h4 class="article_header"><a href="https://mega.nz/file/EBgAGaCQ#RDR0G-Pd7szDlk-7Ix3JzIFR12mv_fmIrvx1d3QlJ1U">2.0A 16 Apr 2026 PUBLIC ALPHA</a></h4>
+                <p class="article_text">Android 16 and kernel 4.19</p>
+                <p class="article_divider_small"></p>
+              </div>
 
               <p class="article_divider"></p>
-              <div class="article_section" style="margin:0px!important;">
-              <p class="article_section_left"></p>
-              <p class="article_section_text">Key2: LOS 22.2-Kernel 4.19</p>
-              <p class="article_section_right"></p>
+              <input type="checkbox" id="k2-15-419" name="k2-15-419">
+              <label for="k2-15-419" class="changelog_divider">
+                <p class="changelog_divider_line" style="flex-grow:0;width:20px;"></p>
+                <p class="changelog_divider_text">Key2: LineageOS 22.2 + Kernel 4.19</p>
+                <p class="changelog_divider_line"></p>
+                <svg class="changelog_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
+                </svg>
+              </label>
+              <p class="article_divider_small"></p>
+
+              <div id="k2-15-419_changelog">
+                <h4 class="article_header"><a href="https://mega.nz/file/NdYSRJqJ#HQu0UK4mnnWkeUzrBrmWyHPkU9CHne09oEVUvmergyg">1.20G 12 Aug 2026 PUBLIC BETA</a></h4>
+                  <p class="article_text">Swapstorming fixed, ZRAM lowered to 2G, lmk reconfigured</p>
+                  <p class="article_text">Little-bit lowered CPU voltage like on retail 4.4 kernel</p>
+                  <p class="article_text">Probes: Battery consumption on active usage tunings (powerhint, cpu-scaling/shedtune)</p>
+                  <p class="article_text">Fixed: "serial console enabled. performance impacted"</p>
+                  <p class="article_text">Fixed: eglTerminate (0xc) crash (at app moving to background)</p>
+                  <p class="article_text">Battery capacity overlay xml fixed</p>
+                  <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/gN5TgI7C#zKn6bf6Lct6QYHCM_MzNRjIlY6exzAFDIj2JM8uEEfA">1.20F 29 Jul 2026 PUBLIC BETA</a></h4>
+                  <p class="article_text">FIXED: Youtube video scratches (HW video decoder activated) that refixed 1080p60 in proper way</p>
+                  <p class="article_text">shed_boost disabled, was draining battery too much (previosly shed_boost was enabled to 1080p60 fixing)</p>
+                  <p class="article_text">FIXED: GPU erros in logcat (more recent GPU blobs from x00td)</p>
+                  <p class="article_text">Memory management tunings: swapiness 60, low-memory-killer (lmk PSI mode)</p>
+                  <p class="article_text">Powerhint tunings for low_power_mode</p>
+                  <p class="article_text">FIXED: Wired headset sound while voice-call</p>
+                  <p class="article_text">DT2W is working</p>
+                  <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
+                  <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/MBYX3I4J#WFQ04jrdC120pkh66xbCyKQATm7cio4sBemHieTnovQ">1.20E 06 Jun 2026 PUBLIC BETA</a></h4>
+                  <p class="article_text">Fixed: Shed/powerhint spamming in logcat</p>
+                  <p class="article_text">Fixed: Aperture camera crash on taking shot</p>
+                  <p class="article_text">Better: Shutter 1080p60</p>
+                  <p class="article_text">Fixed: qwertz/qzerty</p>
+                  <p class="article_text">Swappiness 100</p>
+                  <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
+                  <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/YUokzIxR#vmu1D63GdfjG36FRs8YlUB9O8NnlsF9QK-g4SX20BYY">1.20D 22 May 2026 PUBLIC BETA</a></h4>
+                  <p class="article_text">Mobile-hotspot fixed</p>
+                  <p class="article_text">Wired-headset on VOIP fixed</p>
+                  <p class="article_text">Battery and performance tunings</p>
+                  <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
+                  <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/9FhknL6C#OJOwGhZDDCQXI29tLsPExHA6Y2KQPQ0A7_yd7F9rnEw">1.20C 22 May 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">May security patches</p>
+                  <p class="article_text">VOIP fixed</p>
+                  <p class="article_text">Fixed: Haptic logcat errors</p>
+                  <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
+                  <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/NBgS2LCS#legK_SXhPFUGkhdG6HtzMNqhux_-XXp-V1T7aihH1W4">1.20B 21 May 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">FIXED: BT-sound lags upon device unlock (every time after going into deep-sleep for the first time)</p>
+                  <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
+                  <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/BMZimQyB#2eONwQPzAnDRh2Ca-dihAWL7_s1q-V1vJMzFAiOQotQ">1.20A 19 May 2026 PUBLIC ALPHA</a></h4>
+                  <p class="article_text">Update to linux kernel 4.19 from 4.4</p>
+                  <p class="article_text">Significant battery life improvements</p>
+                  <p class="article_text">Gcam stability improvements</p>
+                  <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
+                <p class="article_divider_small"></p>
+              </div>
+
+              <p class="article_divider"></p>
+              <input type="checkbox" id="k2-15-44" name="k2-15-44">
+              <label for="k2-15-44" class="changelog_divider">
+                <p class="changelog_divider_line" style="flex-grow:0;width:20px;"></p>
+                <p class="changelog_divider_text">Key2: LineageOS 22.2 + Kernel 4.4</p>
+                <p class="changelog_divider_line"></p>
+                <svg class="changelog_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
+                </svg>
+              </label>
+              <p class="article_divider_small"></p>
+
+              <div id="k2-15-44_changelog">
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.10a/LOS22_Key2_ZKrab-v1.10a.zip">ZKrab-v1.10A 04 Aug 2026</a></h4>
+                  <p class="article_text">Enable FM radio and add Qualcomm FM Radio app</p>
+                  <p class="article_text">Enable formatting external storage (SD card) as adoptable storage (Settings/Storage/[SD card]/Format/Format another way) - Not recommended unless you absolutely need more app storage space!</p>
+                  <p class="article_text">Disable AAC codec for known problematic Bluetooth devices, add problematic BMW Bluetooth OUI prefix to disable-AAC list</p>
+                  <p class="article_text">Increase screen brightness threshold for adaptive keyboard backlight shutoff (from ~70% to ~80% on screen brightness slider)</p>
+                  <p class="article_text">Decrease adaptive backlight floor for navigation buttons (from 0.1-1.0 to 0.01-1.0 screen brightness mapping)</p>
+                  <p class="article_text">FIXED: Phone earpiece and voice assistant/"Hey Google" intermittently not working when the latter is enabled</p>
+                  <p class="article_text">FIXED: Yellow flashlight/torch (now white like on stock BB Android 8.1)</p>
+                  <p class="article_text">Revert kernel charging configuration back to stock BB Android 8.1</p>
+                  <p class="article_text">August 2026 Android platform security patch</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.9a/LOS22_Key2_ZKrab-v1.9a.zip">ZKrab-1.9A 24 Jul 2026</a></h4>
+                  <p class="article_text">Set updater URL to Github Lineage-BBKey2/distribution repository for future OTA updates</p>
+                  <p class="article_text">July 2026 Android platform security patch</p>
+                  <p class="article_text">Enable installing unmodified Blackberry Keyboard app from an apk or from: https://play.google.com/store/apps/details?id=com.blackberry.keyboard (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">Update brand, device, manufacturer, model names to blackberry, bbf100, Blackberry, KEY2 (matches closer to stock firmware, allows unpaid use of BlackBerry Hub+ apps, avoids model showing as "BlackBerry Blackberry KEY2" in some cases) (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">More gradual control of media, call, ring, notification volumes (double previous number of volume increments) (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">Add extra frame buffer to reduce UI animation stutter (increased input latency might be noticed) (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">Bluetooth A2DP hardware offload enabled (actual functionality not confirmed) (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">IME Switcher: Make Alt+Enter the default (if updating from Krab-v1.8a you will need to correct your preference in Settings/System/Blackberry keyboard)</p>
+                  <p class="article_text">Unlock device by entering PIN with physical keyboard (no ALT key needed, no swiping up to reveal PIN entry page needed, can disable in Blackberry Keyboard Settings) (thanks to nozerorma for the idea in key2-tweaks app)</p>
+                  <p class="article_text">Enable/disable adaptive keyboard and navigation button backlight in Blackberry Keyboard Settings</p>
+                  <p class="article_text">Currency key on QWERTZ and AZERTY keyboards now produces Euro symbol</p>
+                  <p class="article_text">Default ZRAM size increased from 1 GB to 3 GB</p>
+                  <p class="article_text">Default ZRAM swappiness decreased from 100 to 60</p>
+                  <p class="article_text">Enable lz4 ZRAM compression in kernel config (default compression algorithm is still lzo)</p>
+                  <p class="article_text">Introduce method to choose ZRAM compression algorithm with adb root commands (see "Choose ZRAM Compression Algorithm" section in discord announcement)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/xAgSQRDQ#SH1kS5XRl8jjbRHeXoAIPuo34ge3EjrNfycPOIq0dvk">1.8A 25 Apr 2026</a></h4>
+                  <p class="article_text">Keyboard-blacklight Sadako's algo implemented,</p>
+                  <p class="article_text">Car-bt: music - voice-call glitches try-fix</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/MI5QjbKa#LAN02PouXfyo37OPpL9tqt5Ea0iu_C9chmX99UzdELo">1.7A 17 Apr 2026</a></h4>
+                  <p class="article_text">5Ghz hotspot,</p>
+                  <p class="article_text">Camera black preview sometimes</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/tAxyTJ7K#B39Lhuzdb0fjPeVf67Xb3GJ-_ONUPxbUA4fvMVKviS4">1.6A 14 Apr 2026</a></h4>
+                  <p class="article_text">April 01 security patches</p>
+                  <p class="article_text">qwertz/azerty fix re-applied</p>
+                  <p class="article_text">Lokker app v1.2a updated performance</p>
+                  <p class="article_text">K12KB app v3.1c updated performance</p>
+                  <p class="article_text">GPS/xtra fixes</p>
+                  <p class="article_text">Wi-Fi micro enhancements (NOT WPA3)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/RRQB0KCY#5OWmiiZ9XwRN2rETOL53oF-2M4cSN0E0LDUP2QHD-WI">1.5C 03 Apr 2026</a></h4>
+                  <p class="article_text">March 01 security patches</p>
+                  <p class="article_text">Camera stability - less crashes</p>
+                  <p class="article_text">qwertz/azerty fixed - retail kl/kcm behavior</p>
+                  <p class="article_text">Keyboard settings -&gt; show virtual keyboard toggle</p>
+                  <p class="article_text">Lokker app v1.1 updated</p>
+                  <p class="article_text">Widevine L3 OK, L1 Widevide disabled (will not work)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/AEhhBSDD#YykznA34EN59y1Q7l7TTfUpCxYaVeSQqK0d1m5WkHcM">1.4A 29 Mar 2026</a></h4>
+                  <p class="article_text">NFC fixes</p>
+                  <p class="article_text">Battery drains on heavy renderings</p>
+                  <p class="article_text">QWERTZ, AZERTY fixes</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/0I4jQAoS#N5k-TZ2htjDYCHWTDy-6oW7f9DFRTkP0Ydt-8p-M80o">1.3A 25 Mar 2026</a></h4>
+                  <p class="article_text">Voip fix (tested on Telegram)</p>
+                  <p class="article_text">Svindleds speakers in-call changes fix</p>
+                  <p class="article_text">Touchpad-pagings sensivity -10%, inertion +10%</p>
+                  <p class="article_text">App-links domains verification auto-approve (for microg)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/tB4yRZAK#z3KeqxNVHkW59dlCxXfTHax21AGJUudBqocR0S6_S7U">1.2A 19 Mar 2026</a></h4>
+                  <p class="article_text">Bugfix capacitive nav-buttons toggling</p>
+                  <p class="article_text">Keyboard and nav-btns backlight adaptive levels</p>
+                  <p class="article_text">Custom-keyboard preferences rearranged</p>
+                  <p class="article_text">Keyboard touch paging mode sensivity decreased</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/UR4QjaiY#eG_hFYgwtYJ0bzKkyYEUw916JLEvcqmr4S_Dcuc3njE">1.1B 17 Mar 2026</a></h4>
+                  <p class="article_text">Selinux enforcing</p>
+                  <p class="article_text">Encryption</p>
+                  <p class="article_text">Dt2w, button fixes on syna and focal</p>
+                  <p class="article_text">Volume curve fixes</p>
+                  <p class="article_text">RCS HAL crash fix</p>
+                  <p class="article_text">Bluetooth mac address loader</p>
+                  <p class="article_text">Touch keypad now usable</p>
+                  <p class="article_text">Keyboard working on all apps</p>
+                  <p class="article_text">Wifi hotspot fixes</p>
+                  <p class="article_text">Init fixes</p>
+                  <p class="article_text">Lineage KeyDisabler support</p>
+                  <p class="article_text">USB init fix</p>
+                  <p class="article_text">USB tethering fix</p>
+                <p class="article_divider_small"></p>
+              </div>
+
+              <p class="article_divider"></p>
+              <input type="checkbox" id="le-15-419" name="le-15-419">
+              <label for="le-15-419" class="changelog_divider">
+                <p class="changelog_divider_line" style="flex-grow:0;width:20px;"></p>
+                <p class="changelog_divider_text">Key2LE: LineageOS 22.2 + Kernel 4.19</p>
+                <p class="changelog_divider_line"></p>
+                <svg class="changelog_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
+                </svg>
+              </label>
+              <p class="article_divider_small"></p>
+
+              <div id="le-15-419_changelog">
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.20a/LOS22_Key2LE_ZKrab-v1.20a.zip">ZKrab-v1.20a 21 Aug 2026</a></h4>
+                  <p class="article_text">Update kernel from 4.4 to 4.19 with kernel adaptions and performance tunings (results in generally faster and smoother performance than kernel 4.4 ROMs)
+                  <p class="article_text">Add new FM Radio app (based on https://github.com/iusmac/RevampedFMRadio):</p>
+                  <p class="article_text">Improved UI/UX, “Material You” colours, dark/light theme support, media player notification</p>
+                  <p class="article_text">Allows routing audio to Bluetooth</p>
+                  <p class="article_text">Allows playing without wired headphones as antenna (only works if station reception is strong enough)</p>
+
+                  <p class="article_text">Old Qualcomm FM Radio app kept and renamed to “FM Radio Legacy”</p>
+                  <p class="article_text">Settings/System/Blackberry keyboard: Add independent keyboard and button backlight timeouts and “only light on press” toggles, fixed timeout bugs, removed “Always on” from timeout selection</p>
+                  <p class="article_text">App switcher screen: Remove unnecessary padding for on-screen nav buttons when using hardware nav buttons</p>
+                  <p class="article_text">Status bar: Smaller right-side padding and symmetrical left-side padding</p>
+                  <p class="article_text">Wifi: Enable WPA3-SAE authentication (untested)</p>
+                  <p class="article_text">Add separate OTA update URL for 4.19 kernel ROMs (kernel 4.4 ROMs will not receive OTA update to kernel 4.19 ROMs for now)</p>
+                  <p class="article_text">Known issue: vibration is weaker than on kernel 4.4 roms</p>
+                <p class="article_divider_small"></p>
+              </div>
+
+              <p class="article_divider"></p>
+              <input type="checkbox" id="le-15-44" name="le-15-44">
+              <label for="le-15-44" class="changelog_divider">
+                <p class="changelog_divider_line" style="flex-grow:0;width:20px;"></p>
+                <p class="changelog_divider_text">Key2LE: LineageOS 22.2 + Kernel 4.4</p>
+                <p class="changelog_divider_line"></p>
+                <svg class="changelog_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
+                </svg>
+              </label>
+              <p class="article_divider_small"></p>
+
+              <div id="le-15-44_changelog">
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.10a/LOS22_Key2LE_ZKrab-v1.10a.zip">ZKrab-v1.10a 04 Aug 2026</a></h4>
+                  <p class="article_text">Enable FM radio and add Qualcomm FM Radio app</p>
+                  <p class="article_text">Enable formatting external storage (SD card) as adoptable storage (Settings/Storage/[SD card]/Format/Format another way) - Not recommended unless you absolutely need more app storage space!</p>
+                  <p class="article_text">Disable AAC codec for known problematic Bluetooth devices, add problematic BMW Bluetooth OUI prefix to disable-AAC list</p>
+                  <p class="article_text">Increase screen brightness threshold for adaptive keyboard backlight shutoff (from ~70% to ~80% on screen brightness slider)</p>
+                  <p class="article_text">Decrease adaptive backlight floor for navigation buttons (from 0.1-1.0 to 0.01-1.0 screen brightness mapping)</p>
+                  <p class="article_text">FIXED: Phone earpiece and voice assistant/"Hey Google" intermittently not working when the latter is enabled</p>
+                  <p class="article_text">FIXED: Yellow flashlight/torch (now white like on stock BB Android 8.1)</p>
+                  <p class="article_text">August 2026 Android platform security patch</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.9a/LOS22_Key2LE_ZKrab-v1.9a.zip">ZKrab-v1.9a 25 Jul 2026</a></h4>
+                  <p class="article_text">Enable installing unmodified Blackberry Keyboard app from an apk or from: https://play.google.com/store/apps/details?id=com.blackberry.keyboard (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">Update brand, device, manufacturer, model names to blackberry, bbe100, Blackberry, KEY2 LE (matches closer to stock firmware, allows unpaid use of BlackBerry Hub+ apps, avoids model showing as "BlackBerry Blackberry KEY2 LE" in some cases) (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">More gradual control of media, call, ring, notification volumes (double previous number of volume increments) (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">Add extra frame buffer to reduce UI animation stutter (increased input latency might be noticed) (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">Bluetooth A2DP hardware offload enabled (actual functionality not confirmed) (thanks to wumbomumbo for contribution)</p>
+                  <p class="article_text">Unlock device by entering PIN with physical keyboard (no ALT key needed, no swiping up to reveal PIN entry page needed, can disable in Blackberry Keyboard Settings) (thanks to nozerorma for the idea in key2-tweaks app)</p>
+                  <p class="article_text">Enable/disable adaptive keyboard and navigation button backlight in Blackberry Keyboard Settings</p>
+                  <p class="article_text">Default ZRAM swappiness decrease from 100 to 60</p>
+                  <p class="article_text">Enable lz4 ZRAM compression in kernel config (default compression algorithm is still lzo)</p>
+                  <p class="article_text">Introduce method to choose ZRAM compression algorithm with adb root commands (see "Choose ZRAM Compression Algorithm" section in discord announcement)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.8a/LOS22_Key2LE_ZKrab-v1.8a.zip">ZKrab-v1.8a 15 Jul 2026</a></h4>
+                  <p class="article_text">Keyboard backlight adaptive leveling: Turn off backlight in bright conditions (triggered by high screen brightness) (from Sadako's algo)</p>
+                  <p class="article_text">Keyboard backlight adaptive leveling: Increase min. brightness to 70% (if too bright, user can make it darker in Blackberry Keyboard settings)</p>
+                  <p class="article_text">Car-bt: Music/voice-call switching patch from Krab Key2 ROM</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.7a/LOS22_Key2LE_ZKrab-v1.7a.zip">ZKrab-v1.7a 15 Jul 2026</a></h4>
+                  <p class="article_text">5 Ghz hotspot enabled</p>
+                  <p class="article_text">Camera stability update</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.6a/LOS22_Key2LE_ZKrab-v1.6a.zip">ZKrab-v1.6a 15 Jul 2026</a></h4>
+                  <p class="article_text">Disable bitmap decode telemetry</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.5a/LOS22_Key2LE_ZKrab-v1.5a.zip">ZKrab-v1.5a 15 Jul 2026</a></h4>
+                  <p class="article_text">Camera stability update</p>
+                  <p class="article_text">Blackberry Keyboard settings - virtual keyboard toggle</p>
+                  <p class="article_text">Widevine L3 enabled (L1 Widevide disabled/will not work)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.4a/LOS22_Key2LE_ZKrab-v1.4a.zip">ZKrab-v1.4a 14 Jul 2026</a></h4>
+                  <p class="article_text">NFC fixes</p>
+                  <p class="article_text">Reduce battery drain during sustained GPU load</p>
+                  <p class="article_text">July 2026 Android platform security patch (Note: you cannot downgrade back to v1.3a or below without wiping userdata due to the security patch update)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.3a/LOS22_Key2LE_ZKrab-v1.3a.zip">ZKrab-v1.3a 08 Jul 2026</a></h4>
+                  <p class="article_text">VOIP fix (Fixes crash when joining voice channel on Discord)</p>
+                  <p class="article_text">Svindled's speakers in-call changes fix</p>
+                  <p class="article_text">App-links domain verification auto-approve (for microg)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.2a/LOS22_Key2LE_ZKrab-v1.2a.zip">ZKrab-v1.2a 04 Jul 2026</a></h4>
+                  <p class="article_text">Keyboard and nav-btns backlight adaptive leveling</p>
+                  <p class="article_text">Bluetooth SCO audio config update</p>
+                  <p class="article_text">Disable display subsystem debug logging</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.1a/LOS22_Key2LE_ZKrab-v1.1a.zip">ZKrab-v1.1a 28 Jun 2026</a></h4>
+                  <p class="article_text">QWERTY/AZERTY keyboard layouts/symbols fixed (for real this time)</p>
+                  <p class="article_text">IME Switcher: Enable choosing keyboard shortcut in Settings/System/Blackberry keyboard (default Alt+Enter)</p>
+                  <p class="article_text">Keyboard and nav button brightness settings moved to Settings/System/Blackberry keyboard</p>
+                  <p class="article_text">Battery/display/GPU/CPU power optimizations</p>
+                  <p class="article_text">Battery consumption estimation update</p>
+                  <p class="article_text">GPS fixes/improvements</p>
+                  <p class="article_text">WiFi stability fix</p>
+                  <p class="article_text">NFC stability fix</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.0a/LOS22_Key2LE_ZKrab-v1.0a.zip">ZKrab-v1.0a 22 Jun 2026</a></h4>
+                  <p class="article_text">FIXED: Video recording with front-facing camera</p>
+                  <p class="article_text">FIXED: Video recording with other camera apps (Open Camera, Gcam)</p>
+                  <p class="article_text">The auxiliary rear camera is now selectable (it gives a slightly wider field of view than the main camera)  For videos, switch to maximum resolution to avoid cropping</p>
+                  <p class="article_text">Other camera improvement patches adapted from Key2</p>
+                  <p class="article_text">VoLTE/VT/WFC enabled (not tested), IMS package updated</p>
+                  <p class="article_text">Default ZRAM size increased from 1 GB to 2 GB</p>
+                  <p class="article_text">Alt-key handing fixed with all keyboard apps</p>
+                  <p class="article_text">Holding Alt for alt-lock and holding Shift for caps-lock now supported</p>
+                  <p class="article_text">Pastiera keyboard removed (can be manually installed from https://github.com/palsoftware/pastiera/releases/latest)</p>
+                  <p class="article_text">Stock screen density value is now used (you may want to change the settings in Settings/Display/Display size and text to suit your preferences after this update)</p>
+                  <p class="article_text">VOIP update (not tested)</p>
+                  <p class="article_text">exfat support enabled (not tested)</p>
+                  <p class="article_text">Other LTE updates (not tested)</p>
+                  <p class="article_text">BT SCO/VOIP update (not tested)</p>
+                  <p class="article_text">GPS config fix (not tested)</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/20260615/LOS22_Key2LE_20260615.zip">20260615</a></h4>
+                  <p class="article_text">FIXED: Camera and flashlight</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/To1hXZbA#0xwxp1adJuqrCEopKlSii4gFw3VbSVvn4RYZ2tsEQJc">20260606</a></h4>
+                  <p class="article_text">FIXED: Video/media audio through phone speakers</p>
+                  <p class="article_text">Configure currency key to type "$" instead of "4"</p>
+                  <p class="article_text">Change Updater URL to Github Lineage-BBKey2LE/distribution repository for future OTA updates</p>
+                  <p class="article_text">June 2026 Android platform security patch</p>
+                <p class="article_divider_small"></p>
+
+                <h4 class="article_header"><a href="https://mega.nz/file/ioNhhKzR#Knq8NEYHLaBOX0tGyUQFvtbeaTlWo6Pv4JQ3iTXgg24">20260602</a></h4>
+                  <p class="article_text">May 2026 security patch</p>
+                  <p class="article_text">SELinux and encryption both enabled</p>
+                  <p class="article_text">Changed input method switcher shortcut from SYM key to Alt + Enter to avoid interfering with SYM key function in keyboard apps</p>
+                  <p class="article_text">SYM key and speed key returned to their default functions as in stock BB-Android (SYM key now works to pull up symbols in the bundled Pastiera keyboard app)</p>
+                  <p class="article_text">Serial console disabled (should improve performance)</p>
+                  <p class="article_text">Build no longer signed with public keys (should improve security)</p>
               </div>
               <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/NdYSRJqJ#HQu0UK4mnnWkeUzrBrmWyHPkU9CHne09oEVUvmergyg">1.20G 12 Aug 2026 PUBLIC BETA</a></h4>
-                <p class="article_text">Swapstorming fixed, ZRAM lowered to 2G, lmk reconfigured</p>
-                <p class="article_text">Little-bit lowered CPU voltage like on retail 4.4 kernel</p>
-                <p class="article_text">Probes: Battery consumption on active usage tunings (powerhint, cpu-scaling/shedtune)</p>
-                <p class="article_text">Fixed: "serial console enabled. performance impacted"</p>
-                <p class="article_text">Fixed: eglTerminate (0xc) crash (at app moving to background)</p>
-                <p class="article_text">Battery capacity overlay xml fixed</p>
-                <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/gN5TgI7C#zKn6bf6Lct6QYHCM_MzNRjIlY6exzAFDIj2JM8uEEfA">1.20F 29 Jul 2026 PUBLIC BETA</a></h4>
-                <p class="article_text">FIXED: Youtube video scratches (HW video decoder activated) that refixed 1080p60 in proper way</p>
-                <p class="article_text">shed_boost disabled, was draining battery too much (previosly shed_boost was enabled to 1080p60 fixing)</p>
-                <p class="article_text">FIXED: GPU erros in logcat (more recent GPU blobs from x00td)</p>
-                <p class="article_text">Memory management tunings: swapiness 60, low-memory-killer (lmk PSI mode)</p>
-                <p class="article_text">Powerhint tunings for low_power_mode</p>
-                <p class="article_text">FIXED: Wired headset sound while voice-call</p>
-                <p class="article_text">DT2W is working</p>
-                <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
-                <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/MBYX3I4J#WFQ04jrdC120pkh66xbCyKQATm7cio4sBemHieTnovQ">1.20E 06 Jun 2026 PUBLIC BETA</a></h4>
-                <p class="article_text">Fixed: Shed/powerhint spamming in logcat</p>
-                <p class="article_text">Fixed: Aperture camera crash on taking shot</p>
-                <p class="article_text">Better: Shutter 1080p60</p>
-                <p class="article_text">Fixed: qwertz/qzerty</p>
-                <p class="article_text">Swappiness 100</p>
-                <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
-                <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/YUokzIxR#vmu1D63GdfjG36FRs8YlUB9O8NnlsF9QK-g4SX20BYY">1.20D 22 May 2026 PUBLIC BETA</a></h4>
-                <p class="article_text">Mobile-hotspot fixed</p>
-                <p class="article_text">Wired-headset on VOIP fixed</p>
-                <p class="article_text">Battery and performance tunings</p>
-                <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
-                <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/9FhknL6C#OJOwGhZDDCQXI29tLsPExHA6Y2KQPQ0A7_yd7F9rnEw">1.20C 22 May 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">May security patches</p>
-                <p class="article_text">VOIP fixed</p>
-                <p class="article_text">Fixed: Haptic logcat errors</p>
-                <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
-                <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/NBgS2LCS#legK_SXhPFUGkhdG6HtzMNqhux_-XXp-V1T7aihH1W4">1.20B 21 May 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">FIXED: BT-sound lags upon device unlock (every time after going into deep-sleep for the first time)</p>
-                <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
-                <p class="article_text">Todo: Suppress "Serial console enabled" warning</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/BMZimQyB#2eONwQPzAnDRh2Ca-dihAWL7_s1q-V1vJMzFAiOQotQ">1.20A 19 May 2026 PUBLIC ALPHA</a></h4>
-                <p class="article_text">Update to linux kernel 4.19 from 4.4</p>
-                <p class="article_text">Significant battery life improvements</p>
-                <p class="article_text">Gcam stability improvements</p>
-                <p class="article_text">Todo: Good solution for Synaptics LCD colors/saturation</p>
-              <p class="article_divider_small"></p>
-
-              <p class="article_divider"></p>
-              <div class="article_section" style="margin:0px!important;">
-              <p class="article_section_left"></p>
-              <p class="article_section_text">Key2: LOS 22.2-Kernel 4.4</p>
-              <p class="article_section_right"></p>
-              </div>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.10a/LOS22_Key2_ZKrab-v1.10a.zip">ZKrab-v1.10A 04 Aug 2026</a></h4>
-                <p class="article_text">Enable FM radio and add Qualcomm FM Radio app</p>
-                <p class="article_text">Enable formatting external storage (SD card) as adoptable storage (Settings/Storage/[SD card]/Format/Format another way) - Not recommended unless you absolutely need more app storage space!</p>
-                <p class="article_text">Disable AAC codec for known problematic Bluetooth devices, add problematic BMW Bluetooth OUI prefix to disable-AAC list</p>
-                <p class="article_text">Increase screen brightness threshold for adaptive keyboard backlight shutoff (from ~70% to ~80% on screen brightness slider)</p>
-                <p class="article_text">Decrease adaptive backlight floor for navigation buttons (from 0.1-1.0 to 0.01-1.0 screen brightness mapping)</p>
-                <p class="article_text">FIXED: Phone earpiece and voice assistant/"Hey Google" intermittently not working when the latter is enabled</p>
-                <p class="article_text">FIXED: Yellow flashlight/torch (now white like on stock BB Android 8.1)</p>
-                <p class="article_text">Revert kernel charging configuration back to stock BB Android 8.1</p>
-                <p class="article_text">August 2026 Android platform security patch</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2/distribution/releases/download/v1.9a/LOS22_Key2_ZKrab-v1.9a.zip">ZKrab-1.9A 24 Jul 2026</a></h4>
-                <p class="article_text">Set updater URL to Github Lineage-BBKey2/distribution repository for future OTA updates</p>
-                <p class="article_text">July 2026 Android platform security patch</p>
-                <p class="article_text">Enable installing unmodified Blackberry Keyboard app from an apk or from: https://play.google.com/store/apps/details?id=com.blackberry.keyboard (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">Update brand, device, manufacturer, model names to blackberry, bbf100, Blackberry, KEY2 (matches closer to stock firmware, allows unpaid use of BlackBerry Hub+ apps, avoids model showing as "BlackBerry Blackberry KEY2" in some cases) (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">More gradual control of media, call, ring, notification volumes (double previous number of volume increments) (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">Add extra frame buffer to reduce UI animation stutter (increased input latency might be noticed) (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">Bluetooth A2DP hardware offload enabled (actual functionality not confirmed) (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">IME Switcher: Make Alt+Enter the default (if updating from Krab-v1.8a you will need to correct your preference in Settings/System/Blackberry keyboard)</p>
-                <p class="article_text">Unlock device by entering PIN with physical keyboard (no ALT key needed, no swiping up to reveal PIN entry page needed, can disable in Blackberry Keyboard Settings) (thanks to nozerorma for the idea in key2-tweaks app)</p>
-                <p class="article_text">Enable/disable adaptive keyboard and navigation button backlight in Blackberry Keyboard Settings</p>
-                <p class="article_text">Currency key on QWERTZ and AZERTY keyboards now produces Euro symbol</p>
-                <p class="article_text">Default ZRAM size increased from 1 GB to 3 GB</p>
-                <p class="article_text">Default ZRAM swappiness decreased from 100 to 60</p>
-                <p class="article_text">Enable lz4 ZRAM compression in kernel config (default compression algorithm is still lzo)</p>
-                <p class="article_text">Introduce method to choose ZRAM compression algorithm with adb root commands (see "Choose ZRAM Compression Algorithm" section in discord announcement)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/xAgSQRDQ#SH1kS5XRl8jjbRHeXoAIPuo34ge3EjrNfycPOIq0dvk">1.8A 25 Apr 2026</a></h4>
-                <p class="article_text">Keyboard-blacklight Sadako's algo implemented,</p>
-                <p class="article_text">Car-bt: music - voice-call glitches try-fix</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/MI5QjbKa#LAN02PouXfyo37OPpL9tqt5Ea0iu_C9chmX99UzdELo">1.7A 17 Apr 2026</a></h4>
-                <p class="article_text">5Ghz hotspot,</p>
-                <p class="article_text">Camera black preview sometimes</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/tAxyTJ7K#B39Lhuzdb0fjPeVf67Xb3GJ-_ONUPxbUA4fvMVKviS4">1.6A 14 Apr 2026</a></h4>
-                <p class="article_text">April 01 security patches</p>
-                <p class="article_text">qwertz/azerty fix re-applied</p>
-                <p class="article_text">Lokker app v1.2a updated performance</p>
-                <p class="article_text">K12KB app v3.1c updated performance</p>
-                <p class="article_text">GPS/xtra fixes</p>
-                <p class="article_text">Wi-Fi micro enhancements (NOT WPA3)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/RRQB0KCY#5OWmiiZ9XwRN2rETOL53oF-2M4cSN0E0LDUP2QHD-WI">1.5C 03 Apr 2026</a></h4>
-                <p class="article_text">March 01 security patches</p>
-                <p class="article_text">Camera stability - less crashes</p>
-                <p class="article_text">qwertz/azerty fixed - retail kl/kcm behavior</p>
-                <p class="article_text">Keyboard settings -&gt; show virtual keyboard toggle</p>
-                <p class="article_text">Lokker app v1.1 updated</p>
-                <p class="article_text">Widevine L3 OK, L1 Widevide disabled (will not work)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/AEhhBSDD#YykznA34EN59y1Q7l7TTfUpCxYaVeSQqK0d1m5WkHcM">1.4A 29 Mar 2026</a></h4>
-                <p class="article_text">NFC fixes</p>
-                <p class="article_text">Battery drains on heavy renderings</p>
-                <p class="article_text">QWERTZ, AZERTY fixes</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/0I4jQAoS#N5k-TZ2htjDYCHWTDy-6oW7f9DFRTkP0Ydt-8p-M80o">1.3A 25 Mar 2026</a></h4>
-                <p class="article_text">Voip fix (tested on Telegram)</p>
-                <p class="article_text">Svindleds speakers in-call changes fix</p>
-                <p class="article_text">Touchpad-pagings sensivity -10%, inertion +10%</p>
-                <p class="article_text">App-links domains verification auto-approve (for microg)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/tB4yRZAK#z3KeqxNVHkW59dlCxXfTHax21AGJUudBqocR0S6_S7U">1.2A 19 Mar 2026</a></h4>
-                <p class="article_text">Bugfix capacitive nav-buttons toggling</p>
-                <p class="article_text">Keyboard and nav-btns backlight adaptive levels</p>
-                <p class="article_text">Custom-keyboard preferences rearranged</p>
-                <p class="article_text">Keyboard touch paging mode sensivity decreased</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/UR4QjaiY#eG_hFYgwtYJ0bzKkyYEUw916JLEvcqmr4S_Dcuc3njE">1.1B 17 Mar 2026</a></h4>
-                <p class="article_text">Selinux enforcing</p>
-                <p class="article_text">Encryption</p>
-                <p class="article_text">Dt2w, button fixes on syna and focal</p>
-                <p class="article_text">Volume curve fixes</p>
-                <p class="article_text">RCS HAL crash fix</p>
-                <p class="article_text">Bluetooth mac address loader</p>
-                <p class="article_text">Touch keypad now usable</p>
-                <p class="article_text">Keyboard working on all apps</p>
-                <p class="article_text">Wifi hotspot fixes</p>
-                <p class="article_text">Init fixes</p>
-                <p class="article_text">Lineage KeyDisabler support</p>
-                <p class="article_text">USB init fix</p>
-                <p class="article_text">USB tethering fix</p>
-              <p class="article_divider_small"></p>
-
-              <p class="article_divider"></p>
-              <div class="article_section" style="margin:0px!important;">
-                <p class="article_section_left"></p>
-                <p class="article_section_text">Key2LE: Android 15</p>
-                <p class="article_section_right"></p>
-              </div>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.10a/LOS22_Key2LE_ZKrab-v1.10a.zip">ZKrab-v1.10a 04 Aug 2026</a></h4>
-                <p class="article_text">Enable FM radio and add Qualcomm FM Radio app</p>
-                <p class="article_text">Enable formatting external storage (SD card) as adoptable storage (Settings/Storage/[SD card]/Format/Format another way) - Not recommended unless you absolutely need more app storage space!</p>
-                <p class="article_text">Disable AAC codec for known problematic Bluetooth devices, add problematic BMW Bluetooth OUI prefix to disable-AAC list</p>
-                <p class="article_text">Increase screen brightness threshold for adaptive keyboard backlight shutoff (from ~70% to ~80% on screen brightness slider)</p>
-                <p class="article_text">Decrease adaptive backlight floor for navigation buttons (from 0.1-1.0 to 0.01-1.0 screen brightness mapping)</p>
-                <p class="article_text">FIXED: Phone earpiece and voice assistant/"Hey Google" intermittently not working when the latter is enabled</p>
-                <p class="article_text">FIXED: Yellow flashlight/torch (now white like on stock BB Android 8.1)</p>
-                <p class="article_text">August 2026 Android platform security patch</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.9a/LOS22_Key2LE_ZKrab-v1.9a.zip">ZKrab-v1.9a 25 Jul 2026</a></h4>
-                <p class="article_text">Enable installing unmodified Blackberry Keyboard app from an apk or from: https://play.google.com/store/apps/details?id=com.blackberry.keyboard (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">Update brand, device, manufacturer, model names to blackberry, bbe100, Blackberry, KEY2 LE (matches closer to stock firmware, allows unpaid use of BlackBerry Hub+ apps, avoids model showing as "BlackBerry Blackberry KEY2 LE" in some cases) (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">More gradual control of media, call, ring, notification volumes (double previous number of volume increments) (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">Add extra frame buffer to reduce UI animation stutter (increased input latency might be noticed) (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">Bluetooth A2DP hardware offload enabled (actual functionality not confirmed) (thanks to wumbomumbo for contribution)</p>
-                <p class="article_text">Unlock device by entering PIN with physical keyboard (no ALT key needed, no swiping up to reveal PIN entry page needed, can disable in Blackberry Keyboard Settings) (thanks to nozerorma for the idea in key2-tweaks app)</p>
-                <p class="article_text">Enable/disable adaptive keyboard and navigation button backlight in Blackberry Keyboard Settings</p>
-                <p class="article_text">Default ZRAM swappiness decrease from 100 to 60</p>
-                <p class="article_text">Enable lz4 ZRAM compression in kernel config (default compression algorithm is still lzo)</p>
-                <p class="article_text">Introduce method to choose ZRAM compression algorithm with adb root commands (see "Choose ZRAM Compression Algorithm" section in discord announcement)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.8a/LOS22_Key2LE_ZKrab-v1.8a.zip">ZKrab-v1.8a 15 Jul 2026</a></h4>
-                <p class="article_text">Keyboard backlight adaptive leveling: Turn off backlight in bright conditions (triggered by high screen brightness) (from Sadako's algo)</p>
-                <p class="article_text">Keyboard backlight adaptive leveling: Increase min. brightness to 70% (if too bright, user can make it darker in Blackberry Keyboard settings)</p>
-                <p class="article_text">Car-bt: Music/voice-call switching patch from Krab Key2 ROM</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.7a/LOS22_Key2LE_ZKrab-v1.7a.zip">ZKrab-v1.7a 15 Jul 2026</a></h4>
-                <p class="article_text">5 Ghz hotspot enabled</p>
-                <p class="article_text">Camera stability update</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.6a/LOS22_Key2LE_ZKrab-v1.6a.zip">ZKrab-v1.6a 15 Jul 2026</a></h4>
-                <p class="article_text">Disable bitmap decode telemetry</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.5a/LOS22_Key2LE_ZKrab-v1.5a.zip">ZKrab-v1.5a 15 Jul 2026</a></h4>
-                <p class="article_text">Camera stability update</p>
-                <p class="article_text">Blackberry Keyboard settings - virtual keyboard toggle</p>
-                <p class="article_text">Widevine L3 enabled (L1 Widevide disabled/will not work)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.4a/LOS22_Key2LE_ZKrab-v1.4a.zip">ZKrab-v1.4a 14 Jul 2026</a></h4>
-                <p class="article_text">NFC fixes</p>
-                <p class="article_text">Reduce battery drain during sustained GPU load</p>
-                <p class="article_text">July 2026 Android platform security patch (Note: you cannot downgrade back to v1.3a or below without wiping userdata due to the security patch update)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.3a/LOS22_Key2LE_ZKrab-v1.3a.zip">ZKrab-v1.3a 08 Jul 2026</a></h4>
-                <p class="article_text">VOIP fix (Fixes crash when joining voice channel on Discord)</p>
-                <p class="article_text">Svindled's speakers in-call changes fix</p>
-                <p class="article_text">App-links domain verification auto-approve (for microg)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.2a/LOS22_Key2LE_ZKrab-v1.2a.zip">ZKrab-v1.2a 04 Jul 2026</a></h4>
-                <p class="article_text">Keyboard and nav-btns backlight adaptive leveling</p>
-                <p class="article_text">Bluetooth SCO audio config update</p>
-                <p class="article_text">Disable display subsystem debug logging</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.1a/LOS22_Key2LE_ZKrab-v1.1a.zip">ZKrab-v1.1a 28 Jun 2026</a></h4>
-                <p class="article_text">QWERTY/AZERTY keyboard layouts/symbols fixed (for real this time)</p>
-                <p class="article_text">IME Switcher: Enable choosing keyboard shortcut in Settings/System/Blackberry keyboard (default Alt+Enter)</p>
-                <p class="article_text">Keyboard and nav button brightness settings moved to Settings/System/Blackberry keyboard</p>
-                <p class="article_text">Battery/display/GPU/CPU power optimizations</p>
-                <p class="article_text">Battery consumption estimation update</p>
-                <p class="article_text">GPS fixes/improvements</p>
-                <p class="article_text">WiFi stability fix</p>
-                <p class="article_text">NFC stability fix</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/v1.0a/LOS22_Key2LE_ZKrab-v1.0a.zip">ZKrab-v1.0a 22 Jun 2026</a></h4>
-                <p class="article_text">FIXED: Video recording with front-facing camera</p>
-                <p class="article_text">FIXED: Video recording with other camera apps (Open Camera, Gcam)</p>
-                <p class="article_text">The auxiliary rear camera is now selectable (it gives a slightly wider field of view than the main camera)  For videos, switch to maximum resolution to avoid cropping</p>
-                <p class="article_text">Other camera improvement patches adapted from Key2</p>
-                <p class="article_text">VoLTE/VT/WFC enabled (not tested), IMS package updated</p>
-                <p class="article_text">Default ZRAM size increased from 1 GB to 2 GB</p>
-                <p class="article_text">Alt-key handing fixed with all keyboard apps</p>
-                <p class="article_text">Holding Alt for alt-lock and holding Shift for caps-lock now supported</p>
-                <p class="article_text">Pastiera keyboard removed (can be manually installed from https://github.com/palsoftware/pastiera/releases/latest)</p>
-                <p class="article_text">Stock screen density value is now used (you may want to change the settings in Settings/Display/Display size and text to suit your preferences after this update)</p>
-                <p class="article_text">VOIP update (not tested)</p>
-                <p class="article_text">exfat support enabled (not tested)</p>
-                <p class="article_text">Other LTE updates (not tested)</p>
-                <p class="article_text">BT SCO/VOIP update (not tested)</p>
-                <p class="article_text">GPS config fix (not tested)</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://github.com/Lineage-BBKey2LE/distribution/releases/download/20260615/LOS22_Key2LE_20260615.zip">20260615</a></h4>
-                <p class="article_text">FIXED: Camera and flashlight</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/To1hXZbA#0xwxp1adJuqrCEopKlSii4gFw3VbSVvn4RYZ2tsEQJc">20260606</a></h4>
-                <p class="article_text">FIXED: Video/media audio through phone speakers</p>
-                <p class="article_text">Configure currency key to type "$" instead of "4"</p>
-                <p class="article_text">Change Updater URL to Github Lineage-BBKey2LE/distribution repository for future OTA updates</p>
-                <p class="article_text">June 2026 Android platform security patch</p>
-              <p class="article_divider_small"></p>
-
-              <h4 class="article_header"><a href="https://mega.nz/file/ioNhhKzR#Knq8NEYHLaBOX0tGyUQFvtbeaTlWo6Pv4JQ3iTXgg24">20260602</a></h4>
-                <p class="article_text">May 2026 security patch</p>
-                <p class="article_text">SELinux and encryption both enabled</p>
-                <p class="article_text">Changed input method switcher shortcut from SYM key to Alt + Enter to avoid interfering with SYM key function in keyboard apps</p>
-                <p class="article_text">SYM key and speed key returned to their default functions as in stock BB-Android (SYM key now works to pull up symbols in the bundled Pastiera keyboard app)</p>
-                <p class="article_text">Serial console disabled (should improve performance)</p>
-                <p class="article_text">Build no longer signed with public keys (should improve security)</p>
-              <p class="article_divider"></p>
 
             </div>
           <p class="article_name_divider" style="width:auto;margin-right:var(--article-padding);"></p>
@@ -1165,7 +1331,7 @@ footer {
                 <p class="article_text"><a href="https://github.com/kgr17/Key2Toolbox">Key2 Toolbox</a>: A root app that bundles a quite a few tweaks into one app, the full list is on the github repo</p>
               <p class="article_divider_small"></p>
 
-              <h4 class="article_header">Increase UI smoothness</h4>
+              <h4 class="article_header">Limit background apps</h4>
                 <p class="article_text">Note: This also makes battery life a little better</p>
                 <p class="article_text">Go into Settings -&gt; Apps -&gt; App battery usage</p>
                 <p class="article_text">Set the drop down to 'Optimized'</p>
@@ -1173,7 +1339,7 @@ footer {
                 <p class="article_text">Note: Make sure NOT disable any apps you get notifications from, use to play media or have set as a default app (keyboard app, launcher, etc)</p>
               <p class="article_divider_small"></p>
 
-              <h4 class="article_header">Using gesture navigation</h4>
+              <h4 class="article_header">Use gesture navigation</h4>
                 <p class="article_text">Go into Settings -&gt; System -&gt; Buttons</p>
                 <p class="article_text">Enable the 'Enable on-screen nav bar' toggle</p>
                 <p class="article_text">Check the 'Gesture navigation' radio button in Settings -&gt; System -&gt; Gestures -&gt; Navigation mode</p>
