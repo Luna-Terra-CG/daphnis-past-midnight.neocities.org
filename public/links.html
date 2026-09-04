@@ -216,6 +216,21 @@ footer {
   margin-top: auto;
   margin-bottom: auto;
 }
+/* 88x31 buttons */
+#buttons {
+  margin: 14px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+
+  img {
+    width: 88px !important;
+    height: 31px !important;
+  }
+}
 
 
 </style>
@@ -340,13 +355,6 @@ footer {
                 <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
               </svg>
             </div></a>
-            <a class="sidebar_link" href="https://openmw.org/"><div class="big_button">
-              <p>OpenMW</p>
-              <p id="button_spacer"></p>
-              <svg class="button_arrow" viewBox="0 0 54 85" xmlns="http://www.w3.org/2000/svg">
-                <path fill="currentColor" d="M 5.7562988,79.218243 0.03683021,73.436486 15.522985,57.969213 31.00914,42.50194 15.50457,26.969301 0,11.436663 5.7766512,5.7183321 11.553301,0 32.77665,21.247858 54,42.495716 32.737884,63.747858 11.475767,85 Z"></path>
-              </svg>
-            </div></a>
             <a class="sidebar_link" href="https://postmarketos.org/"><div class="big_button">
               <p>postmarketOS</p>
               <p id="button_spacer"></p>
@@ -435,8 +443,16 @@ footer {
           </div> <!-- #cool_buttons -->
 
           <div class="type">
-            <p id="rants">Websites (still finding some. please leave any suggestions on my guestbook)</p>
+            <p>Websites (still finding some. please leave any suggestions on my guestbook)</p>
             <p id="seperator_lonk">
+          </div>
+
+          <div id="buttons">
+            <a href="https://openmw.org"><img src="buttons/openmw-big.png" title="foss reimplementation of Morrowind's (and to some extent oblivion's) game engine"/></a>
+            <a href="https://archive.org"><img src="buttons/archive.png"/></a>
+            <a href="https://lexaloffle.com/pico-8.php"><img src="buttons/pico8.gif"/></a>
+            <a href="https://zoruniverse.info/"><img src="buttons/zor_button.png"/></a>
+            <a href="https://frutigeraeroarchive.org/"><img src="buttons/frutigeraeroarchive_button_2.png"/></a>
           </div>
 
           <footer>
